@@ -1,12 +1,30 @@
 import { animated, useTransition } from "@react-spring/web";
 import { useEffect, useState } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, useLocation, useOutlet } from "react-router-dom";
 import { NavLink } from "./components/Navlink.tsx";
 
 function App() {
   const sections = ["portfolio", "resume"];
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // 1. Get the actual element to render for the current route
+  const currentOutlet = useOutlet();
+
+  // 2. The transition now tracks the element, but is KEYED by the pathname.
+  // This is the crucial part.
+  const transitions = useTransition(currentOutlet, {
+    from: { opacity: 0, transform: "translateY(20px)" },
+    enter: { opacity: 1, transform: "translateY(0px)" },
+    leave: {
+      opacity: 0,
+      transform: "translateY(-10px)",
+      position: "absolute",
+      width: "100%",
+    },
+    // Use the pathname as the key. This tells react-spring when an item leaves.
+    key: location.pathname,
+  });
 
   const menuTransition = useTransition(isMenuOpen, {
     from: { transform: "translateY(-100%)", opacity: 0 },
@@ -16,12 +34,15 @@ function App() {
   });
 
   useEffect(() => {
+    // Scroll to top on navigation change
+    window.scrollTo(0, 0);
+
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
     }
-  }, [isMenuOpen]);
+  }, [isMenuOpen, location]); // Rerun effect on location change too
 
   return (
     <div className="w-screen h-screen flex flex-col bg-[#FFF6ED] relative">
@@ -41,7 +62,7 @@ function App() {
             <NavLink
               key={label}
               label={label}
-              isActive={location.pathname.slice(1) === label}
+              isActive={location.pathname.includes(label)}
             />
           ))}
         </div>
@@ -67,7 +88,7 @@ function App() {
                   <NavLink
                     key={label}
                     label={label}
-                    isActive={location.pathname.slice(1) === label}
+                    isActive={location.pathname.includes(label)}
                     className="text-3xl font-pfMarlet"
                     onClick={() => setIsMenuOpen(false)}
                     left="5px"
@@ -79,8 +100,15 @@ function App() {
           )
       )}
 
-      <main className="w-full flex-grow overflow-y-auto">
-        <Outlet />
+      {/* The main content area needs a relative position for the absolute leave animation */}
+      <main className="w-full flex-grow relative">
+        {/* 3. Render the transitions */}
+        {transitions((style, outlet) => (
+          <animated.div style={style}>
+            {/* outlet is now the actual component like <Dashboard /> or <Portfolio /> */}
+            {outlet}
+          </animated.div>
+        ))}
       </main>
     </div>
   );
