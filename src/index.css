@@ -1,6 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "Lindsey Signature";
+  src: url("../fonts/LindseySignature.ttf");
+}
+@font-face {
+  font-family: "PF Marlet Medium";
+  src: url("../fonts/PF_Marlet_Display_Medium.otf");
+}
+@font-face {
+  font-family: "PF Marlet Medium Italic";
+  src: url("../fonts/PF_Marlet_Display_Medium_Italic.otf");
+}
+
 
 body {
   margin: 0;

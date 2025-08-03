@@ -1,71 +1,87 @@
+import { animated, useTransition } from "@react-spring/web";
 import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { NavLink } from "./components/Navlink.tsx";
+
 function App() {
-  const sections = ["about", "designs", "blog", "guides", "contact"];
+  const sections = ["portfolio", "resume"];
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const [randomStyle, setRandomStyle] = useState({
-    top: 0,
-    left: 0,
-    rotation: 0,
-    scale: 1,
+  const menuTransition = useTransition(isMenuOpen, {
+    from: { transform: "translateY(-100%)", opacity: 0 },
+    enter: { transform: "translateY(0%)", opacity: 1 },
+    leave: { transform: "translateY(-100%)", opacity: 0 },
+    config: { tension: 220, friction: 24 },
   });
+
   useEffect(() => {
-    const maxPositionOffset = 5;
-    const maxRotation = 5;
-    const minScale = 0.9;
-    const maxScale = 1.2;
-
-    const randomTop =
-      Math.floor(Math.random() * (maxPositionOffset * 2)) - maxPositionOffset;
-    const randomLeft =
-      Math.floor(Math.random() * (maxPositionOffset * 2)) - maxPositionOffset;
-    const randomRotation =
-      Math.floor(Math.random() * (maxRotation * 2)) - maxRotation;
-    const randomScale = minScale + Math.random() * (maxScale - minScale);
-
-    setRandomStyle({
-      top: randomTop,
-      left: randomLeft,
-      rotation: randomRotation,
-      scale: randomScale,
-    });
-  }, [location.pathname]);
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isMenuOpen]);
 
   return (
-    <div className="w-screen h-screen items-center justify-center">
-      <nav className="w-full h-[10%] justify-center items-center flex">
-        <div className="items-center justify-center flex w-[10%]">
-          <Link className="color-black" to={"/"}>
-            <img src={"logo.svg"} />
-          </Link>
-        </div>
-        <div className=" items-center justify-center flex w-[80%]">
-          {sections.map((label, i) => (
-            <Link className="color-black" key={i} to={"/" + label}>
-              <button className="bg-transparent relative py-2 px-4">
-                {label}
-                {location.pathname.slice(1) == label && (
-                  <img
-                    className="absolute"
-                    src={"/circle.svg"}
-                    alt="Active link indicator"
-                    style={{
-                      top: `${randomStyle.top + 8}px`,
-                      left: `${randomStyle.left}px`,
-                      transform: `rotate(${randomStyle.rotation}deg) scale(${randomStyle.scale})`,
-                    }}
-                  />
-                )}
-              </button>
-            </Link>
+    <div className="w-screen h-screen flex flex-col bg-[#FFF6ED] relative">
+      <nav className="w-full flex items-center justify-between p-4 bg-[#FFF6ED] sticky top-0 z-20 font-pfMarlet">
+        <Link to={"/"} className="z-30">
+          <div className="font-pfMarletItalic text-[#AAAADD]">NMX DESIGN</div>
+        </Link>
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="sm:hidden text-2xl z-30"
+        >
+          {isMenuOpen ? "✕" : "☰"}
+        </button>
+
+        <div className="hidden sm:flex sm:flex-row sm:items-center sm:space-x-6">
+          {sections.map((label) => (
+            <NavLink
+              key={label}
+              label={label}
+              isActive={location.pathname.slice(1) === label}
+            />
           ))}
         </div>
-        <div className=" items-center justify-center flex w-[10%]">menu</div>
       </nav>
-      <div className="w-screen h-[90%] items-center justify-center">
+      {menuTransition(
+        (style, item) =>
+          item && (
+            <animated.div
+              className="sm:hidden fixed inset-0 z-20 flex flex-col items-center justify-center space-y-4 bg-[#FFF6ED]"
+              style={style}
+            >
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="absolute top-4 right-4 text-3xl"
+              >
+                ✕
+              </button>
+              <div
+                className="flex flex-col items-center space-y-6"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {sections.map((label) => (
+                  <NavLink
+                    key={label}
+                    label={label}
+                    isActive={location.pathname.slice(1) === label}
+                    className="text-3xl font-pfMarlet"
+                    onClick={() => setIsMenuOpen(false)}
+                    left="5px"
+                    scale={1.7}
+                  />
+                ))}
+              </div>
+            </animated.div>
+          )
+      )}
+
+      <main className="w-full flex-grow overflow-y-auto">
         <Outlet />
-      </div>
+      </main>
     </div>
   );
 }

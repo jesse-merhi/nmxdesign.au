@@ -1,29 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App"; // Assuming your Layout component is named App now
-import Dashboard from "./dashboard/Dashboard.tsx"; // Ensure this has a .tsx extension
+import App from "./App.tsx";
+import Dashboard from "./dashboard/Dashboard.tsx";
 import "./index.css";
+import Portfolio from "./Portfolio.tsx";
+import ProjectPage from "./ProjectPage.tsx";
+import Resume from "./Resume.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />, // Changed from Layout to App to match your other file
+    element: <App />,
     children: [
       { path: "", element: <Dashboard /> },
-      { path: "about", element: <div>about</div> },
-      { path: "designs", element: <div>designs</div> },
-      { path: "blog", element: <div>blog</div> },
-      { path: "guides", element: <div>guides</div> },
-      { path: "contact", element: <div>contact</div> },
+
+      { path: "portfolio", element: <Portfolio /> },
+      { path: "portfolio/:projectId", element: <ProjectPage /> },
+
+      { path: "resume", element: <Resume /> },
     ],
   },
 ]);
 
-// 1. Get the root element from the DOM
 const rootElement = document.getElementById("root");
 
-// 2. Check if the element exists before rendering
 if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
@@ -31,6 +32,5 @@ if (rootElement) {
     </React.StrictMode>
   );
 } else {
-  // You can add better error handling here if you want
   console.error("Failed to find the root element");
 }
