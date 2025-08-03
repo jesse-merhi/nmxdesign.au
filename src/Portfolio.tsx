@@ -1,7 +1,7 @@
 import { animated, useTrail } from "@react-spring/web";
-import AnimatedCard from "./AnimatedCard.tsx";
+import AnimatedCard, { type Project } from "./AnimatedCard.tsx";
 
-const portfolioItems = [
+const portfolioItems: Project[] = [
   {
     slug: "project-aurora",
     title: "Project Aurora",

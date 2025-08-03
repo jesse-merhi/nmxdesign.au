@@ -1,7 +1,13 @@
 import { useInView, useSpring } from "@react-spring/web";
 import Card from "./Card.tsx";
 
-const AnimatedCard = ({ item }) => {
+export type Project = {
+  slug: string;
+  title: string;
+  description: string;
+};
+
+const AnimatedCard = ({ item }: { item: Project }) => {
   const [ref, inView] = useInView({
     rootMargin: "-10% 0%",
   });

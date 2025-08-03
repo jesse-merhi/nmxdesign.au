@@ -35,21 +35,23 @@ const DrawingCirclesSVG = () => {
         });
 
         while (true) {
-          await next({
-            strokeDashoffset: -lengths[index],
-            config: { duration: 1500 },
-          });
+          if (lengths[index]) {
+            await next({
+              strokeDashoffset: -lengths[index],
+              config: { duration: 1500 },
+            });
 
-          await next({
-            strokeDashoffset: lengths[index],
-            immediate: true,
-          });
+            await next({
+              strokeDashoffset: lengths[index],
+              immediate: true,
+            });
 
-          await next({
-            strokeDashoffset: 0,
-            config: { duration: 1500 },
-            delay: 500,
-          });
+            await next({
+              strokeDashoffset: 0,
+              config: { duration: 1500 },
+              delay: 500,
+            });
+          }
         }
       },
     });

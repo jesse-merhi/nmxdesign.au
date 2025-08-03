@@ -11,7 +11,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 const Resume = () => {
-  const [numPages, setNumPages] = useState(null);
+  const [numPages, setNumPages] = useState<null | number>(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [isPdfLoaded, setPdfLoaded] = useState(false);
 
@@ -22,7 +22,7 @@ const Resume = () => {
     delay: 100,
   });
 
-  const onDocumentLoadSuccess = ({ numPages }) => {
+  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
     setPdfLoaded(true);
   };
