@@ -1,7 +1,6 @@
 import { animated, useTransition } from "@react-spring/web";
 import { useEffect, useState } from "react";
 
-// An array of the items we want to animate in the text column
 const textItems = [
   {
     key: "h1",
@@ -29,32 +28,28 @@ const textItems = [
 ];
 
 function Dashboard() {
-  // State to control the visibility and trigger animations
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // Trigger the animation shortly after the component mounts
     const timer = setTimeout(() => setShow(true), 200);
     return () => clearTimeout(timer);
   }, []);
 
-  // Transition for the text elements (h1 and p)
   const textTransitions = useTransition(show ? textItems : [], {
     from: { opacity: 0, transform: "translateY(30px)" },
     enter: { opacity: 1, transform: "translateY(0px)" },
     leave: { opacity: 0, transform: "translateY(20px)" },
     config: { mass: 1, tension: 280, friction: 25 },
-    trail: 200, // Stagger the animations
+    trail: 200,
     keys: (item) => item.key,
   });
 
-  // A separate transition for the image
   const imageTransition = useTransition(show, {
     from: { opacity: 0, transform: "scale(0.9)" },
     enter: { opacity: 1, transform: "scale(1)" },
     leave: { opacity: 0, transform: "scale(0.9)" },
     config: { mass: 1, tension: 280, friction: 25 },
-    delay: 400, // Delay to let the text start animating first
+    delay: 400,
   });
 
   return (

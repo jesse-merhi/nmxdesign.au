@@ -7,12 +7,8 @@ function App() {
   const sections = ["portfolio", "resume"];
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // 1. Get the actual element to render for the current route
   const currentOutlet = useOutlet();
 
-  // 2. The transition now tracks the element, but is KEYED by the pathname.
-  // This is the crucial part.
   const transitions = useTransition(currentOutlet, {
     from: { opacity: 0, transform: "translateY(20px)" },
     enter: { opacity: 1, transform: "translateY(0px)" },
@@ -22,7 +18,6 @@ function App() {
       position: "absolute",
       width: "100%",
     },
-    // Use the pathname as the key. This tells react-spring when an item leaves.
     key: location.pathname,
   });
 
@@ -34,7 +29,6 @@ function App() {
   });
 
   useEffect(() => {
-    // Scroll to top on navigation change
     window.scrollTo(0, 0);
 
     if (isMenuOpen) {
@@ -42,7 +36,7 @@ function App() {
     } else {
       document.body.style.overflow = "unset";
     }
-  }, [isMenuOpen, location]); // Rerun effect on location change too
+  }, [isMenuOpen, location]);
 
   return (
     <div className="w-screen h-screen flex flex-col bg-[#FFF6ED] relative">
@@ -100,14 +94,9 @@ function App() {
           )
       )}
 
-      {/* The main content area needs a relative position for the absolute leave animation */}
       <main className="w-full flex-grow relative">
-        {/* 3. Render the transitions */}
         {transitions((style, outlet) => (
-          <animated.div style={style}>
-            {/* outlet is now the actual component like <Dashboard /> or <Portfolio /> */}
-            {outlet}
-          </animated.div>
+          <animated.div style={style}>{outlet}</animated.div>
         ))}
       </main>
     </div>
