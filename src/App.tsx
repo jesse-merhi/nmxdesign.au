@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="w-screen h-screen flex flex-col bg-[#FFF6ED] relative">
-      <nav className="w-full flex items-center justify-between p-4 bg-[#FFF6ED] sticky top-0 z-20 font-pfMarlet">
+      <nav className="w-full flex items-center justify-between p-4 pr-8 bg-[#FFF6ED] sticky top-0 z-20 font-pfMarlet">
         <Link to={"/"} className="z-30">
           <div className="font-pfMarletItalic text-[#AAAADD]">NMX DESIGN</div>
         </Link>
@@ -51,7 +51,7 @@ function App() {
           {isMenuOpen ? "✕" : "☰"}
         </button>
 
-        <div className="hidden sm:flex sm:flex-row sm:items-center sm:space-x-6">
+        <div className="hidden sm:flex sm:flex-row sm:items-center sm:space-x-6 gap-4">
           {sections.map((label) => (
             <NavLink
               key={label}
@@ -65,7 +65,7 @@ function App() {
         (style, item) =>
           item && (
             <animated.div
-              className="sm:hidden fixed inset-0 z-20 flex flex-col items-center justify-center space-y-4 bg-[#FFF6ED] h-lvh"
+              className="sm:hidden fixed inset-0 z-20 flex flex-col items-center justify-center space-y-4 bg-[#FFF6ED] h-screen"
               style={style}
             >
               <button
@@ -94,7 +94,7 @@ function App() {
           )
       )}
 
-      <main className="w-full flex-grow relative">
+      <main className="w-full flex-grow relative overflow-y-auto">
         {transitions((style, outlet) => (
           <animated.div style={style}>{outlet}</animated.div>
         ))}

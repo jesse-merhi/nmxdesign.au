@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* --- Font Definitions (Unchanged) --- */
 @font-face {
   font-family: "Lindsey Signature";
   src: url("../fonts/LindseySignature.ttf");
@@ -14,14 +16,21 @@
   src: url("../fonts/PF_Marlet_Display_Medium_Italic.otf");
 }
 
+/* --- CORRECTED GLOBAL STYLES --- */
+html,
+body,
+#root {
+  /* This ensures the entire document structure fills the viewport height */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+}
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  height: 100%;
-  font-family: 'Inter';
-  width: 100%;
+  /* Set a default font and prevent the body itself from showing scrollbars */
+  font-family: 'Inter', sans-serif;
+  overflow: hidden; 
 }
 
 h1 {
@@ -29,6 +38,7 @@ h1 {
   line-height: 1.1;
 }
 
+/* --- Utility Classes (Unchanged) --- */
 .text-border2 {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;

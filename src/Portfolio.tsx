@@ -210,7 +210,7 @@ const Portfolio = () => {
     delay: 200,
   });
   return (
-    <animated.div style={trail[0]} className="p-4 md:p-12">
+    <animated.div style={trail[0]} className="p-4 md:p-12 h-full bg-[#FFF6ED]">
       <animated.h1
         style={trail[1]}
         className="text-5xl font-bold mb-12 text-center font-pfMarlet text-gray-700"
@@ -219,7 +219,7 @@ const Portfolio = () => {
       </animated.h1>
       <animated.div
         style={trail[2]}
-        className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto"
+        className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto h-full"
       >
         {portfolioItems.map((item, index) => (
           <AnimatedCard key={item.slug || index} item={item} />
