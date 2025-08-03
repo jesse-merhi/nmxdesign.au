@@ -65,7 +65,7 @@ function App() {
         (style, item) =>
           item && (
             <animated.div
-              className="sm:hidden fixed inset-0 z-20 flex flex-col items-center justify-center space-y-4 bg-[#FFF6ED]"
+              className="sm:hidden fixed inset-0 z-20 flex flex-col items-center justify-center space-y-4 bg-[#FFF6ED] h-lvh"
               style={style}
             >
               <button
