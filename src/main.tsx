@@ -7,6 +7,7 @@ import "./index.css";
 import Portfolio from "./Portfolio.tsx";
 import ProjectPage from "./ProjectPage.tsx";
 import Resume from "./Resume.tsx";
+import UplinkPage from "./UplinkPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { path: "", element: <Dashboard /> },
 
       { path: "portfolio", element: <Portfolio /> },
+      { path: "portfolio/uplinked", element: <UplinkPage /> },
       { path: "portfolio/:projectId", element: <ProjectPage /> },
 
       { path: "resume", element: <Resume /> },

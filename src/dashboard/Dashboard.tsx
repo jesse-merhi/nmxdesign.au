@@ -26,14 +26,12 @@ function Dashboard() {
 
         <animated.div style={trail[1]}>
           <p className="font-pfMarlet text-base mt-4 sm:mt-8 md:mt-12 lg:mt-16 leading-relaxed">
-            Bacon ipsum dolor amet beef ribs beef jerky turducken, meatball
-            brisket chislic burgdoggen tongue bacon spare ribs pancetta strip
-            steak flank kevin. Sirloin prosciutto pork ground round shankle
-            picanha pancetta turkey meatloaf landjaeger doner shank kevin. Strip
-            steak drumstick t-bone, meatball short ribs beef pork chop fatback
-            brisket jerky venison. Andouille pork loin fatback swine. Tri-tip
-            chicken pork chop shoulder spare ribs, short loin sausage chuck
-            venison andouille meatball buffalo cow.
+            Hi, I'm Nancy Gao, a product-minded builder who loves to design! I
+            thrive in ambiguity, turn messy workflows into clear systems, and
+            ship fast while staying grounded in customer insight and data.
+            Sydney based and impact driven, I'm at my best when I can own a
+            problem end to end, rally a team, and raise the bar on both outcomes
+            and how the team works together.
           </p>
         </animated.div>
       </div>
