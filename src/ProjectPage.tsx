@@ -14,9 +14,7 @@ const ProjectPage = () => {
       <h1 className="text-4xl font-bold mb-4 font-pfMarlet text-gray-700">
         Project: <span className="text-[#FF593E]">{projectId}</span>
       </h1>
-      <p className="text-lg text-gray-600 mb-8">
-        Details for this project will go here.
-      </p>
+      <p className="text-lg text-gray-600 mb-8">Coming soon!</p>
       <Link
         to="/portfolio"
         className="text-[#AAAADD] hover:underline font-bold"
