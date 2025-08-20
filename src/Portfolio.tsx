@@ -3,6 +3,12 @@ import AnimatedCard, { type Project } from "./AnimatedCard.tsx";
 
 const portfolioItems: Project[] = [
   {
+    slug: "aiperftool",
+    title: "AI Powered Performance Tool",
+    description:
+      "A tool that uses AI to help you summarise your work achievements and write up your performance reviews.",
+  },
+  {
     slug: "uplinked",
     title: "Uplinked",
     description:
