@@ -30,7 +30,7 @@ const Card = ({ slug, title, description, style }: CardProps) => {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <h2 className="text-3xl font-bold text-[#AAAADD] mb-3 font-pfMarletItalic">
+        <h2 className="text-3xl font-bold text-[#AAAADD] mb-3 font-pfMarlet">
           {title}
         </h2>
         <p className="text-gray-700 text-lg">{description}</p>
