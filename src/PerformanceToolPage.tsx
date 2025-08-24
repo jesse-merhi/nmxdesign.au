@@ -530,6 +530,18 @@ const PerformanceToolPage = () => {
               </p>
             </div>
           </div>
+          {/* Blog Reference */}
+
+          <div className="text-center">
+            <ClickableImage
+              src="/perftooldesigns/blog.png"
+              alt="Blog post announcing the AI performance tool"
+              className="rounded-xl shadow-lg mx-auto max-w-2xl"
+            />
+            <p className="text-gray-600 mt-4 italic">
+              Official blog post announcing the tool to all Atlassians.
+            </p>
+          </div>
         </animated.section>
 
         {/* Post-Launch Evolution */}
@@ -648,20 +660,6 @@ const PerformanceToolPage = () => {
                 <li>• Align early with partner teams</li>
               </ul>
             </div>
-          </div>
-        </animated.section>
-
-        {/* Blog Reference */}
-        <animated.section style={trail[11]} className="mb-16">
-          <div className="text-center">
-            <ClickableImage
-              src="/perftooldesigns/blog.png"
-              alt="Blog post announcing the AI performance tool"
-              className="rounded-xl shadow-lg mx-auto max-w-2xl"
-            />
-            <p className="text-gray-600 mt-4 italic">
-              Official blog post announcing the tool to all Atlassians.
-            </p>
           </div>
         </animated.section>
 
