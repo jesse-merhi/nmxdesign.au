@@ -24,7 +24,7 @@ const Portfolio = () => {
     delay: 200,
   });
   return (
-    <animated.div style={trail[0]} className="p-4 md:p-12 h-full bg-[#FFF6ED]">
+    <animated.div style={trail[0]} className="p-4 md:p-12 h-full">
       <animated.h1
         style={trail[1]}
         className="text-5xl font-bold mb-12 text-center font-pfMarlet text-gray-700"

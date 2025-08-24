@@ -25,7 +25,10 @@ function Dashboard() {
         </animated.div>
 
         <animated.div style={trail[1]}>
-          <p className="font-pfMarlet text-base mt-4 sm:mt-8 md:mt-12 lg:mt-16 leading-relaxed">
+          <p
+            className="font-pfMarlet text-base mt-4 sm:mt-8 md:mt-12 lg:mt-16 leading-relaxed bg-[#FFF6ED]/60 rounded-lg"
+            style={{ boxShadow: "0 0 30px 15px rgba(255, 246, 237, 0.6)" }}
+          >
             Hi, I'm Nancy Gao, a product-minded builder who loves to design! I
             thrive in ambiguity, turn messy workflows into clear systems, and
             ship fast while staying grounded in customer insight and data.
@@ -43,6 +46,7 @@ function Dashboard() {
             className="max-w-full h-auto"
             src={"/mainProfile.svg"}
             alt="Portrait photo of Nancy next to a flower."
+            loading="eager"
           />
         </animated.div>
       </div>

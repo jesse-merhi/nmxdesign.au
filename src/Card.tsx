@@ -26,7 +26,7 @@ const Card = ({ slug, title, description, style }: CardProps) => {
     <Link to={`/portfolio/${slug}`}>
       <animated.div
         style={{ ...style, ...hoverAnimation }}
-        className="bg-white/60 p-8 rounded-xl border border-gray-200 cursor-pointer h-full"
+        className="bg-white/80 p-8 rounded-xl border border-gray-200 cursor-pointer h-full"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >

@@ -39,8 +39,16 @@ function App() {
   }, [isMenuOpen, location]);
 
   return (
-    <div className="w-screen h-screen flex flex-col bg-[#FFF6ED] relative">
-      <nav className="w-full flex items-center justify-between p-4 pr-8 bg-[#FFF6ED] sticky top-0 z-20 font-pfMarlet">
+    <div
+      className="w-screen h-screen flex flex-col relative"
+      style={{
+        backgroundColor: "#FFF6ED",
+        backgroundImage: "url(/bg.svg)",
+        backgroundRepeat: "repeat",
+        backgroundSize: "1000px 1000px",
+      }}
+    >
+      <nav className="w-full flex items-center justify-between p-4 pr-8 bg-[#FFF6ED] backdrop-blur-sm sticky top-0 z-20 font-pfMarlet">
         <Link to={"/"} className="z-30">
           <div className="font-pfMarletItalic text-[#AAAADD]">NMX DESIGN</div>
         </Link>

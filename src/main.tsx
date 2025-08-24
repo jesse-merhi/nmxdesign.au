@@ -8,6 +8,7 @@ import Portfolio from "./Portfolio.tsx";
 import ProjectPage from "./ProjectPage.tsx";
 import Resume from "./Resume.tsx";
 import UplinkPage from "./UplinkPage.tsx";
+import PerformanceToolPage from "./PerformanceToolPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
 
       { path: "portfolio", element: <Portfolio /> },
       { path: "portfolio/uplinked", element: <UplinkPage /> },
+      { path: "portfolio/aiperftool", element: <PerformanceToolPage /> },
       { path: "portfolio/:projectId", element: <ProjectPage /> },
 
       { path: "resume", element: <Resume /> },
