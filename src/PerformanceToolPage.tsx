@@ -186,9 +186,13 @@ const PerformanceToolPage = () => {
             <div className="md:col-start-2 md:row-start-1">
               <h3 className="font-bold text-[#AAAADD] mb-1">Role & Timeline</h3>
               <p className="text-gray-700">
-                Driver, Owner, Product Manager &amp; Product Designer
+                <strong>Role:</strong> Driver, Owner, Product Manager &amp;
+                Product Designer
                 <br />
-                3‑day design sprint • 9 months engineering • 1 month design
+                <strong>Timeline:</strong>
+                <p>3 day design sprint</p>
+                <p> 9 months engineering</p>
+                <p>1 month design</p>
               </p>
             </div>
 
