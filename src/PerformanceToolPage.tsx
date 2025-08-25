@@ -189,10 +189,8 @@ const PerformanceToolPage = () => {
                 <strong>Role:</strong> Driver, Owner, Product Manager &amp;
                 Product Designer
                 <br />
-                <strong>Timeline:</strong>
-                <p>3 day design sprint</p>
-                <p> 9 months engineering</p>
-                <p>1 month design</p>
+                <strong>Timeline:</strong> 3 day design sprint, 9 month
+                engineering, 1 month design
               </p>
             </div>
 
