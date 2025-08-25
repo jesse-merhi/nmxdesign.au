@@ -187,8 +187,10 @@ const UplinkPage = () => {
 
               <h3 className="font-bold text-[#AAAADD] mb-2">Role & Timeline</h3>
               <p className="text-gray-700">
-                Driver, Product Management & Product Design
-                <br />3 weeks intensive design sprint
+                <strong>Role:</strong> Driver, Product Management & Product
+                Design
+                <br />
+                <strong>Timeline:</strong> 3 weeks intensive design sprint
               </p>
             </div>
             <div>
@@ -208,9 +210,14 @@ const UplinkPage = () => {
 
               <h3 className="font-bold text-[#AAAADD] mb-2 mt-6">Impact</h3>
               <p className="text-gray-700">
-                Transformed a simple navigation interface into a comprehensive
-                operational dashboard • Eliminated redundant workflows •
-                Improved admin efficiency for workforce management
+                • Transformed a simple navigation interface into a comprehensive
+                operational dashboard
+                <p className="text-gray-700">
+                  • Eliminated redundant workflows
+                </p>
+                <p className="text-gray-700">
+                  • Improved admin efficiency for workforce management
+                </p>
               </p>
             </div>
           </div>
