@@ -507,7 +507,7 @@ const PerformanceToolPage = () => {
                 one week early. I led the design and engineering teams in a QA
                 blitz: updating UI components, adding confirmation modals and
                 refining UX writing to Atlassian standards. I also designed the
-                tool's branding logo used across releases and loading screens .
+                tool's branding logo used across releases and loading screens.
               </p>
             </div>
 
