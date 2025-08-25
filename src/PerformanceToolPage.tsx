@@ -212,10 +212,9 @@ const PerformanceToolPage = () => {
 
             <div className="md:col-start-2 md:row-start-2">
               <h3 className="font-bold text-[#AAAADD] mb-1">Impact</h3>
-              <p className="text-gray-700">
-                30%+ adoption in first cycle • 10,000 hours saved • ~10 hours
-                saved per employee
-              </p>
+              <p className="text-gray-700">30%+ adoption in first cycle </p>
+              <p className="text-gray-700">10,000 hours saved </p>
+              <p className="text-gray-700">~10 hours saved per employee</p>
             </div>
           </div>
 
