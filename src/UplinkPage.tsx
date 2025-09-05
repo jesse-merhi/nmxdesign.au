@@ -173,6 +173,14 @@ const UplinkPage = () => {
           <h1 className="text-6xl font-bold text-gray-700 mb-6 font-pfMarlet">
             Uplinked
           </h1>
+          <OptimizedImage
+            src="/uplinked/header_image.jpeg"
+            alt="Uplinked case study header image"
+            className="w-full rounded-xl shadow-lg mt-2 mb-8"
+            aspectRatio="16/9"
+            loading="eager"
+            fit="cover"
+          />
           <div className="grid md:grid-cols-2 gap-8 text-lg">
             <div>
               <h3 className="font-bold text-[#AAAADD] mb-2">Challenge</h3>
@@ -229,7 +237,7 @@ const UplinkPage = () => {
             The Current State of Uplinked
           </h2>
 
-          <div className="bg-white/60 p-8 rounded-xl border border-gray-200 shadow-sm mb-8">
+          <div className="mb-8">
             <p className="text-gray-700 leading-relaxed mb-6">
               Uplinked is a product being developed by engineers employed by{" "}
               <a
@@ -288,7 +296,7 @@ const UplinkPage = () => {
             Problem Analysis
           </h2>
 
-          <div className="bg-white/60 p-8 rounded-xl border border-gray-200 shadow-sm">
+          <div>
             <h3 className="text-2xl font-bold mb-4 font-pfMarlet text-[#AAAADD]">
               The Existing Dashboard Problem
             </h3>
@@ -330,7 +338,7 @@ const UplinkPage = () => {
             Exploration - User Research & Requirements Gathering
           </h2>
 
-          <div className="bg-white/60 p-8 rounded-xl border border-gray-200 shadow-sm">
+          <div>
             <p className="text-gray-700 leading-relaxed mb-6">
               To understand the product better I met with the CEO of Synergy and
               the engineers to discuss the ideal state of the dashboard. The CEO
@@ -425,7 +433,7 @@ const UplinkPage = () => {
             Make - Initial Wireframes
           </h2>
 
-          <div className="bg-white/60 p-8 rounded-xl border border-gray-200 shadow-sm">
+          <div>
             <p className="text-gray-700 leading-relaxed mb-6">
               Now that I had a high level idea of what I needed to make I moved
               onto creating some wireframes to map out the general hierarchy of
@@ -481,7 +489,7 @@ const UplinkPage = () => {
             Layout Strategy & Design Decisions
           </h2>
 
-          <div className="bg-white/60 p-8 rounded-xl border border-gray-200 shadow-sm">
+          <div>
             <p className="text-gray-700 leading-relaxed mb-6">
               To simplify the dashboard for users I explored three different
               layout options including varying navigation patterns: no scroll
@@ -533,7 +541,7 @@ const UplinkPage = () => {
             Design Evolution & Card Development
           </h2>
 
-          <div className="bg-white/60 p-8 rounded-xl border border-gray-200 shadow-sm">
+          <div>
             <p className="text-gray-700 leading-relaxed mb-6">
               After some design reviews of the rough drafts, I went back to the
               drawing board to reimagine the arrangements and create higher
@@ -579,7 +587,7 @@ const UplinkPage = () => {
             Progressive Fidelity Development
           </h2>
 
-          <div className="bg-white/60 p-8 rounded-xl border border-gray-200 shadow-sm">
+          <div>
             <p className="text-gray-700 leading-relaxed mb-6">
               From low-fidelity wireframes, I progressively added visual design
               elements, incorporating a color scheme of orange and blue with
@@ -622,39 +630,22 @@ const UplinkPage = () => {
             </p>
 
             <h3 className="text-2xl font-bold mb-4 font-pfMarlet text-[#AAAADD]">
-              Web Dashboard - Desktop
+              Web Dashboard - Final Desktop
             </h3>
-            <div className="w-full flex justify-center mb-4">
-              <iframe
-                style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
-                width="800"
-                height="450"
-                src="https://embed.figma.com/proto/mvKf4FxeoRpzGIEP0cq1aO/Projects?node-id=267-58831&scaling=scale-down&content-scaling=fixed&page-id=19%3A110587&starting-point-node-id=269%3A59136&embed-host=share"
-                allowFullScreen
-                className="rounded-lg"
-              ></iframe>
-            </div>
-            <p className="text-center text-xl text-gray-600 mb-6 italic">
-              Interactive desktop dashboard prototype
-            </p>
+            <ClickableImage
+              src="/uplinked/final_desktop.jpeg"
+              alt="Final desktop dashboard design"
+              caption="Final desktop dashboard design"
+            />
 
             <h3 className="text-2xl font-bold mb-4 mt-8 font-pfMarlet text-[#AAAADD]">
-              Mobile Dashboard - Field Operations
+              Mobile Dashboard - Final Mobile
             </h3>
-            <div className="w-full flex justify-center mb-4">
-              <iframe
-                style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
-                width="800"
-                height="450"
-                src="https://embed.figma.com/proto/mvKf4FxeoRpzGIEP0cq1aO/Projects?node-id=269-59136&p=f&scaling=scale-down&content-scaling=fixed&page-id=19%3A110587&starting-point-node-id=269%3A59136&embed-host=share"
-                allowFullScreen
-                className="rounded-lg"
-              ></iframe>
-            </div>
-            <p className="text-center text-xl text-gray-600 mb-6 italic">
-              Interactive mobile dashboard prototype - field operations and
-              on-the-go management.
-            </p>
+            <ClickableImage
+              src="/uplinked/final_mobile.jpeg"
+              alt="Final mobile dashboard design"
+              caption="Final mobile dashboard design"
+            />
 
             <p className="text-gray-700 leading-relaxed mt-6">
               The mobile version maintains all critical functionality while

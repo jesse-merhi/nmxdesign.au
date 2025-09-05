@@ -9,6 +9,7 @@ interface OptimizedImageProps {
   aspectRatio?: string;
   loading?: "eager" | "lazy";
   placeholder?: boolean;
+  fit?: "contain" | "cover" | "fill" | "none" | "scale-down";
 }
 
 const OptimizedImage = ({
@@ -20,6 +21,7 @@ const OptimizedImage = ({
   aspectRatio = "auto",
   loading = "lazy",
   placeholder = true,
+  fit = "contain",
 }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -32,7 +34,7 @@ const OptimizedImage = ({
 
   return (
     <div 
-      className={`relative overflow-hidden ${className}`}
+      className={`relative overflow-hidden bg-white ${className}`}
       style={containerStyle}
     >
       {/* Placeholder/Loading state */}
@@ -54,7 +56,17 @@ const OptimizedImage = ({
         src={src}
         alt={alt}
         loading={loading}
-        className={`w-full h-full object-contain transition-opacity duration-300 ${
+        className={`w-full h-full transition-opacity duration-300 ${
+          fit === "cover"
+            ? "object-cover"
+            : fit === "fill"
+            ? "object-fill"
+            : fit === "none"
+            ? "object-none"
+            : fit === "scale-down"
+            ? "object-scale-down"
+            : "object-contain"
+        } ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
         onLoad={() => setIsLoaded(true)}

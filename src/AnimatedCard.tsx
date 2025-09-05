@@ -5,6 +5,8 @@ export type Project = {
   slug: string;
   title: string;
   description: string;
+  display_photo?: string;
+  tags?: string[];
 };
 
 const AnimatedCard = ({ item }: { item: Project }) => {
@@ -25,6 +27,8 @@ const AnimatedCard = ({ item }: { item: Project }) => {
         slug={item.slug}
         title={item.title}
         description={item.description}
+        display_photo={item.display_photo}
+        tags={item.tags}
         style={animationStyle}
       />
     </div>

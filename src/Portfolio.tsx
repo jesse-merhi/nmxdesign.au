@@ -7,12 +7,16 @@ const portfolioItems: Project[] = [
     title: "AI Powered Performance Tool",
     description:
       "A tool that uses AI to help you summarise your work achievements and write up your performance reviews.",
+    display_photo: "/perftooldesigns/display_photo.jpeg",
+    tags: ["AI", "UX", "Product Design"],
   },
   {
     slug: "uplinked",
     title: "Uplinked",
     description:
       "Workforce Management System dashboard design for a physical security company managing hundreds of guards across multiple worksites.",
+    display_photo: "/uplinked/display_photo.jpeg",
+    tags: ["UX", "Project Management", "Dashboard", "Web", "Mobile"],
   },
 ];
 
@@ -29,7 +33,7 @@ const Portfolio = () => {
         style={trail[1]}
         className="text-5xl font-bold mb-12 text-center font-pfMarlet text-gray-700"
       >
-        Case Studies
+        Portfolio
       </animated.h1>
       <animated.div
         style={trail[2]}

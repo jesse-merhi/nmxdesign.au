@@ -172,6 +172,14 @@ const PerformanceToolPage = () => {
           <h1 className="text-6xl font-bold text-gray-700 mb-6 font-pfMarlet">
             AI-Powered Performance Tool
           </h1>
+          <OptimizedImage
+            src="/perftooldesigns/header_image.jpeg"
+            alt="Performance Tool case study header image"
+            className="w-full rounded-xl shadow-lg mt-2 mb-8"
+            aspectRatio="16/9"
+            loading="eager"
+            fit="cover"
+          />
 
           <div className="grid text-lg md:grid-cols-2 md:grid-rows-2 gap-x-8 gap-y-1 items-start">
             {/* Row 1 */}
@@ -225,29 +233,15 @@ const PerformanceToolPage = () => {
           </p>
         </animated.div>
 
-        {/* Figma Embed */}
-        <animated.section style={trail[2]} className="mb-16">
-          <div className="text-center">
-            <iframe
-              style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
-              width="100%"
-              height="450"
-              src="https://embed.figma.com/proto/mvKf4FxeoRpzGIEP0cq1aO/Projects?node-id=169-44487&page-id=1%3A2&starting-point-node-id=169%3A44487&embed-host=share"
-              allowFullScreen
-              className="rounded-xl shadow-lg max-w-4xl mx-auto"
-            />
-            <p className="text-gray-600 mt-4 italic">
-              Interactive Figma prototype — explore the full design system.
-            </p>
-          </div>
-        </animated.section>
+        {/* Figma Embed moved to final section */}
 
         {/* The Problem */}
         <animated.section style={trail[3]} className="mb-16">
           <h2 className="text-4xl font-bold text-gray-700 mb-8 font-pfMarlet">
             The Problem
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-8">
+            {/* Main problem narrative */}
             <div>
               <p className="text-lg text-gray-700 mb-6">
                 Atlassian's biannual performance review consumed about 10 hours
@@ -255,54 +249,57 @@ const PerformanceToolPage = () => {
                 productivity dipped as people tried to balance their day job
                 with a time‑intensive process.
               </p>
-              <p className="text-lg text-gray-700 mb-6">
+              <p className="text-lg text-gray-700 mb-0">
                 Working at Atlassian, I noticed peers struggling to balance
                 their work while ensuring their performance reviews were
                 completed. This reduced productivity across the organisation —
                 whether time spent on critical projects or reviewing work from
                 the past quarter.
               </p>
-
-              <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
-                <h4 className="font-bold text-[#AAAADD] mb-4">
-                  What Atlassians were saying
-                </h4>
-                <div className="space-y-3 text-gray-700">
-                  <blockquote className="italic">
-                    "Team, the self assessment for the entire org is at 35% and
-                    today is the last day. As a team we have delivered a lot in
-                    the last 6 months, so please take a few hours to capture
-                    everything that you have accomplished in your self
-                    assessment so we can have a productive APEX cycle."
-                  </blockquote>
-                  <blockquote className="italic">
-                    "Manager time in performance review hasn't been reduced.
-                    Managers are actively moving dates forwards to their teams
-                    to allow adequate time to write performance notes. One week
-                    to write 14+ notes isn't possible without late
-                    nights/weekend."
-                  </blockquote>
-                  <blockquote className="italic">
-                    "Sorry, I'm focused on performance review."
-                  </blockquote>
-                  <blockquote className="italic">
-                    "Here's the reality: 100% of my performance review is
-                    currently done on nights and weekends because I have zero
-                    available time. I'm pretty sure critical projects are a
-                    higher priority than performance review, so there's no
-                    pushing that work out."
-                  </blockquote>
-                </div>
-                <p className="text-gray-700 mt-4">
-                  There were no tools or process improvements to help with the
-                  performance review process.
-                </p>
-              </div>
             </div>
+
+            {/* Quotes block */}
+            <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
+              <h4 className="font-bold text-[#AAAADD] mb-4">
+                What Atlassians were saying
+              </h4>
+              <div className="space-y-3 text-gray-700">
+                <blockquote className="italic">
+                  "Team, the self assessment for the entire org is at 35% and
+                  today is the last day. As a team we have delivered a lot in
+                  the last 6 months, so please take a few hours to capture
+                  everything that you have accomplished in your self
+                  assessment so we can have a productive APEX cycle."
+                </blockquote>
+                <blockquote className="italic">
+                  "Manager time in performance review hasn't been reduced.
+                  Managers are actively moving dates forwards to their teams
+                  to allow adequate time to write performance notes. One week
+                  to write 14+ notes isn't possible without late
+                  nights/weekend."
+                </blockquote>
+                <blockquote className="italic">
+                  "Sorry, I'm focused on performance review."
+                </blockquote>
+                <blockquote className="italic">
+                  "Here's the reality: 100% of my performance review is
+                  currently done on nights and weekends because I have zero
+                  available time. I'm pretty sure critical projects are a
+                  higher priority than performance review, so there's no
+                  pushing that work out."
+                </blockquote>
+              </div>
+              <p className="text-gray-700 mt-4">
+                There were no tools or process improvements to help with the
+                performance review process.
+              </p>
+            </div>
+
+            {/* Supporting image */}
             <ClickableImage
               src="/perftooldesigns/brainstormingInOffice.png"
               alt="Brainstorming session in the Atlassian office"
-              className="rounded-xl shadow-lg"
+              className="rounded-xl shadow-lg w-full"
             />
           </div>
         </animated.section>
@@ -313,7 +310,7 @@ const PerformanceToolPage = () => {
             Research &amp; Discovery
           </h2>
           <div className="space-y-8">
-            <div className="bg-white/60 p-8 rounded-xl border border-gray-200">
+            <div>
               <h3 className="text-2xl font-bold text-[#AAAADD] mb-4">
                 Who is this for?
               </h3>
@@ -410,7 +407,7 @@ const PerformanceToolPage = () => {
             </div>
 
             {/* Mock Ups */}
-            <div className="bg-white/60 p-8 rounded-xl border border-gray-200">
+            <div>
               <h3 className="text-2xl font-bold text-[#AAAADD] mb-4">
                 Mock‑ups & early designs
               </h3>
@@ -441,7 +438,7 @@ const PerformanceToolPage = () => {
             </div>
 
             {/* Design Handover */}
-            <div className="bg-white/60 p-8 rounded-xl border border-gray-200">
+            <div>
               <h3 className="text-2xl font-bold text-[#AAAADD] mb-4">
                 Design handover to engineers
               </h3>
@@ -499,7 +496,7 @@ const PerformanceToolPage = () => {
             />
 
             {/* Blitz testing */}
-            <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
+            <div>
               <h3 className="text-2xl font-bold text-[#AAAADD] mb-4">
                 Blitz testing before global release
               </h3>
@@ -513,7 +510,7 @@ const PerformanceToolPage = () => {
             </div>
 
             {/* Collaboration with Design Ops */}
-            <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
+            <div>
               <h3 className="text-2xl font-bold text-[#AAAADD] mb-4">
                 Collaboration with Design Operations
               </h3>
@@ -661,6 +658,26 @@ const PerformanceToolPage = () => {
                 <li>• Align early with partner teams</li>
               </ul>
             </div>
+          </div>
+        </animated.section>
+
+        {/* Interactive Prototype (moved from top) */}
+        <animated.section style={trail[11]} className="mb-16">
+          <h2 className="text-4xl font-bold text-gray-700 mb-8 font-pfMarlet">
+            Interactive Prototype
+          </h2>
+          <div className="text-center">
+            <iframe
+              style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
+              width="100%"
+              height="450"
+              src="https://embed.figma.com/proto/mvKf4FxeoRpzGIEP0cq1aO/Projects?node-id=169-44487&page-id=1%3A2&starting-point-node-id=169%3A44487&embed-host=share"
+              allowFullScreen
+              className="rounded-xl shadow-lg max-w-4xl mx-auto"
+            />
+            <p className="text-gray-600 mt-4 italic">
+              Explore the full end‑to‑end prototype.
+            </p>
           </div>
         </animated.section>
 
