@@ -637,7 +637,7 @@ const PerformanceToolPage = () => {
               className="rounded-xl shadow-lg max-w-4xl mx-auto"
             />
             <p className="text-gray-600 mt-4 italic">
-              Interactive Figma prototype — explore the full design system.
+              High-fidelity screens of the design.
             </p>
           </div>
         </animated.section>
