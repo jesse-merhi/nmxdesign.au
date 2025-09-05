@@ -614,12 +614,11 @@ const PerformanceToolPage = () => {
 
           {/* Additional Figma embed placed above the existing one */}
           <div className="text-center mb-8">
-            <iframe
+            <img
               style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
               width="100%"
-              height="450"
-              src="https://embed.figma.com/design/mvKf4FxeoRpzGIEP0cq1aO/Projects?node-id=660-47459&embed-host=share"
-              allowFullScreen
+              src="/perftooldesigns/DesignSystem.jpg"
+              alt="Visual design system and components."
               className="rounded-xl shadow-lg max-w-4xl mx-auto"
             />
             <p className="text-gray-600 mt-4 italic">
