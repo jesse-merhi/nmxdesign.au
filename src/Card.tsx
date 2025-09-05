@@ -28,7 +28,7 @@ const Card = ({ slug, title, description, display_photo, tags, style }: CardProp
     <Link to={`/portfolio/${slug}`}>
       <animated.div
         style={{ ...style, ...hoverAnimation }}
-        className="bg-white/80 rounded-xl border border-gray-200 cursor-pointer h-full overflow-hidden"
+        className="bg-white/80 rounded-xl border border-gray-200 cursor-pointer h-full overflow-hidden flex flex-col"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
@@ -40,13 +40,13 @@ const Card = ({ slug, title, description, display_photo, tags, style }: CardProp
             loading="lazy"
           />
         ) : null}
-        <div className="p-6">
+        <div className="p-6 flex-1 flex flex-col">
           <h2 className="text-3xl font-bold text-[#AAAADD] mb-3 font-pfMarlet">
             {title}
           </h2>
           <p className="text-gray-700 text-lg">{description}</p>
           {Array.isArray(tags) && tags.length > 0 ? (
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="mt-auto pt-5 flex flex-wrap gap-2">
               {tags.map((tag, i) => (
                 <span
                   key={`${slug}-tag-${i}`}
