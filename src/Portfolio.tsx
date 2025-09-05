@@ -8,7 +8,7 @@ const portfolioItems: Project[] = [
     description:
       "A tool that uses AI to help you summarise your work achievements and write up your performance reviews.",
     display_photo: "/perftooldesigns/display_photo.jpeg",
-    tags: ["AI", "UX", "Product Design"],
+    tags: ["AI", "UX", "Product Design","Product Management"],
   },
   {
     slug: "uplinked",
