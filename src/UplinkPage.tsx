@@ -195,7 +195,7 @@ const UplinkPage = () => {
 
               <h3 className="font-bold text-[#AAAADD] mb-2">Role & Timeline</h3>
               <p className="text-gray-700">
-                <strong>Role:</strong> Driver, Product Management & Product
+                <strong>Role:</strong> Driver, Product Manager & Product
                 Design
                 <br />
                 <strong>Timeline:</strong> 3 weeks intensive design sprint
