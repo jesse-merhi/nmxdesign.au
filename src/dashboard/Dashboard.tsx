@@ -19,7 +19,7 @@ function Dashboard() {
       {/* --- Left Column --- */}
       <div className="flex flex-col text-center sm:w-1/2 sm:text-left sm:pr-8">
         <animated.div style={trail[0]}>
-          <h1 className="font-lindsey font-black text-5xl sm:text-5xl lg:text-6xl">
+          <h1 className="font-lindsey font-black text-5xl sm:text-5xl lg:text-6xl text-[#184027]">
             Nancy Mu Xuan
           </h1>
         </animated.div>
