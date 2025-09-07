@@ -95,7 +95,7 @@ const JiraPlaybookPage = () => {
               <h3 className="font-bold text-[#AAAADD] mb-1">Target Users</h3>
               <div className="text-gray-700 space-y-0.5">
                 <p><strong>Design Managers:</strong> Need portfolio visibility and resource allocation</p>
-                <p><strong>Design ICs:</strong> Seek consistent ways of working and impact tracking</p>
+                <p><strong>Designers:</strong> Seek consistent ways of working and impact tracking</p>
               </div>
             </div>
 
@@ -130,7 +130,7 @@ const JiraPlaybookPage = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
-                <h4 className="font-bold text-[#AAAADD] mb-4">🧶 Core Problems</h4>
+                <h4 className="font-bold text-[#AAAADD] mb-4">Core Problems</h4>
                 <ul className="text-gray-700 space-y-2">
                   <li>• <strong>Poor visibility</strong> of design work across Atlassian</li>
                   <li>• <strong>Lack of strategic planning</strong> across multiple teams/projects</li>
@@ -141,7 +141,7 @@ const JiraPlaybookPage = () => {
               </div>
 
               <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
-                <h4 className="font-bold text-[#AAAADD] mb-4">💰 Business Impact</h4>
+                <h4 className="font-bold text-[#AAAADD] mb-4">Business Impact</h4>
                 <p className="text-gray-700 mb-4">
                   This lack of visibility for managers and designers delays work, limits our ability to communicate deadlines to cross-functional partners, and causes us to set unrealistic expectations.
                 </p>
@@ -152,7 +152,7 @@ const JiraPlaybookPage = () => {
             </div>
 
             <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
-              <h4 className="font-bold text-[#AAAADD] mb-4">👨‍👩‍👧‍👦 Who Are We Solving This For?</h4>
+              <h4 className="font-bold text-[#AAAADD] mb-4">Who Are We Solving This For?</h4>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h5 className="font-semibold text-gray-700 mb-2">Design Managers</h5>
@@ -183,7 +183,7 @@ const JiraPlaybookPage = () => {
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
-                  <h4 className="font-bold text-[#AAAADD] mb-3">🔵 Stream 1: Cloud Readiness Team</h4>
+                  <h4 className="font-bold text-[#AAAADD] mb-3">Stream 1: Cloud Readiness Team</h4>
                   <ul className="text-gray-700 space-y-1 text-sm">
                     <li>• Onboard Cloud Readiness team to Jira</li>
                     <li>• Create ready-to-use Jira boards for all teams</li>
@@ -193,7 +193,7 @@ const JiraPlaybookPage = () => {
                   </ul>
                 </div>
                 <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
-                  <h4 className="font-bold text-[#AAAADD] mb-3">🔵 Stream 2: Wider Organization</h4>
+                  <h4 className="font-bold text-[#AAAADD] mb-3">Stream 2: Wider Organization</h4>
                   <ul className="text-gray-700 space-y-1 text-sm">
                     <li>• Create Jira best practices for all designers</li>
                     <li>• Test playbook with other teams for iteration</li>
@@ -399,7 +399,7 @@ const JiraPlaybookPage = () => {
             </div>
 
             <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
-              <h4 className="font-bold text-[#AAAADD] mb-4">🔮 Future Considerations</h4>
+              <h4 className="font-bold text-[#AAAADD] mb-4">Future Considerations</h4>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h5 className="font-semibold text-gray-700 mb-2">Epic Synchronization</h5>

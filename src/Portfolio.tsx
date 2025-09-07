@@ -24,7 +24,7 @@ const portfolioItems: Project[] = [
     description:
       "A practical delivery playbook to improve team alignment, planning and execution across Jira squads.",
     display_photo: "/jiraplaybook/DisplayimageJiraplaybook.jpg",
-    tags: ["UX", "Process", "Playbook", "Workshop"],
+    tags: ["UX", "Way of working", "Playbook", "Workshop"],
   },
 ];
 
