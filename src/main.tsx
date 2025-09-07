@@ -9,6 +9,7 @@ import ProjectPage from "./ProjectPage.tsx";
 import Resume from "./Resume.tsx";
 import UplinkPage from "./UplinkPage.tsx";
 import PerformanceToolPage from "./PerformanceToolPage.tsx";
+import JiraPlaybookPage from "./JiraPlaybookPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "portfolio", element: <Portfolio /> },
       { path: "portfolio/uplinked", element: <UplinkPage /> },
       { path: "portfolio/aiperftool", element: <PerformanceToolPage /> },
+      { path: "portfolio/jiraplaybook", element: <JiraPlaybookPage /> },
       { path: "portfolio/:projectId", element: <ProjectPage /> },
 
       { path: "resume", element: <Resume /> },

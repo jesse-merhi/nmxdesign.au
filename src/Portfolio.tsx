@@ -18,6 +18,14 @@ const portfolioItems: Project[] = [
     display_photo: "/uplinked/display_photo.jpeg",
     tags: ["UX", "Project Management", "Dashboard", "Web", "Mobile"],
   },
+  {
+    slug: "jiraplaybook",
+    title: "Jira Playbook",
+    description:
+      "A practical delivery playbook to improve team alignment, planning and execution across Jira squads.",
+    display_photo: "/jiraplaybook/DisplayimageJiraplaybook.jpg",
+    tags: ["UX", "Process", "Playbook", "Workshop"],
+  },
 ];
 
 const Portfolio = () => {
