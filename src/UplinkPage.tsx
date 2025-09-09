@@ -514,6 +514,59 @@ const UplinkPage = () => {
           </div>
         </animated.div>
 
+        {/* Future Plan for Uplinked */}
+        <animated.div style={trail[10]} className="mb-16">
+          <h2 className="text-4xl font-bold mb-6 font-pfMarlet text-gray-700">
+            Future plan for Uplinked
+          </h2>
+
+          <div className="bg-white/60 p-8 rounded-xl border border-gray-200 shadow-sm">
+            <ClickableImage
+              src="/uplinked/Future_featureplan_uplinked.jpg"
+              alt="Future plan for Uplinked"
+              caption="Future plan for Uplinked"
+            />
+
+            <p className="text-gray-700 leading-relaxed mt-6 mb-6">
+              This work focused on redesigning the dashboard. Other experiences and flows were not part of this scope.
+            </p>
+
+            <p className="text-gray-700 leading-relaxed mb-6">
+              Next steps for Uplinked are to enhance the design of the screens connected to the dashboard. Some of these pages currently lack the functionality to connect to the dashboard, as noted below.
+            </p>
+
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-2xl font-bold mb-2 font-pfMarlet text-[#AAAADD]">Shift allocation</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Allows admins to allocate shifts to users. The dashboard's Shift allocation feature takes you to the Schedule page. There, you can view the weekly shift schedule and assign users to individual shifts.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-2 font-pfMarlet text-[#AAAADD]">Shift approval</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Allows guards to approve completed shifts. The dashboard Shift approval feature leads to the Shift list page. The proposal is to add another filter. This filter will show shifts that need approval or those that are already approved.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-2 font-pfMarlet text-[#AAAADD]">Employee availability</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Allows admin to view employee availability status. The Employee availability feature on the dashboard brings you to the User list page. There should be an additional filter added so you can check employee availability.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-2 font-pfMarlet text-[#AAAADD]">Alerts</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Notify users of important tasks. The dashboard Alerts feature leads to the specific profile. The proposal aims to guide the admin to address the problem and solve the issue immediately.
+                </p>
+              </div>
+            </div>
+          </div>
+        </animated.div>
+
         {/* Impact & Learnings */}
         <animated.div style={trail[11]} className="mb-16">
           <h2 className="text-4xl font-bold mb-6 font-pfMarlet text-gray-700">
