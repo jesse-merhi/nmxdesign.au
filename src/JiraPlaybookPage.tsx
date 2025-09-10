@@ -159,7 +159,7 @@ const JiraPlaybookPage = () => {
                   <p className="text-gray-700 text-sm">Need to make decisions about a managed portfolio of work and plan with greater transparency.</p>
                 </div>
                 <div>
-                  <h5 className="font-semibold text-gray-700 mb-2">Design ICs</h5>
+                  <h5 className="font-semibold text-gray-700 mb-2">Designers</h5>
                   <p className="text-gray-700 text-sm">Seek more consistent ways of working and help track their impact narrative.</p>
                 </div>
               </div>
