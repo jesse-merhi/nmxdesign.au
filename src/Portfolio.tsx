@@ -1,37 +1,37 @@
-import { animated, useTrail } from "@react-spring/web";
-import AnimatedCard, { type Project } from "./AnimatedCard.tsx";
+import { animated, useTrail } from '@react-spring/web';
+import AnimatedCard, { type Project } from './AnimatedCard.tsx';
 
 const portfolioItems: Project[] = [
   {
-    slug: "aiperftool",
-    title: "AI Powered Performance Tool",
+    slug: 'aiperftool',
+    title: 'AI Powered Performance Tool',
     description:
-      "A tool that uses AI to help you summarise your work achievements and write up your performance reviews.",
-    display_photo: "/perftooldesigns/display_photo.jpeg",
-    tags: ["AI", "UX", "Product Design","Product Management"],
+      'A tool that uses AI to help you summarise your work achievements and write up your performance reviews.',
+    display_photo: '/perftooldesigns/display_photo.jpeg',
+    tags: ['AI', 'UX', 'Product Design', 'Product Management'],
   },
   {
-    slug: "uplinked",
-    title: "Uplinked",
+    slug: 'uplinked',
+    title: 'Uplinked',
     description:
-      "Workforce Management System dashboard design for a physical security company managing hundreds of guards across multiple worksites.",
-    display_photo: "/uplinked/display_photo.jpeg",
-    tags: ["UX", "Project Management", "Dashboard", "Web", "Mobile"],
+      'Workforce Management System dashboard design for a physical security company managing hundreds of guards across multiple worksites.',
+    display_photo: '/uplinked/display_photo.jpeg',
+    tags: ['UX', 'Project Management', 'Dashboard', 'Web', 'Mobile'],
   },
   {
-    slug: "jiraplaybook",
-    title: "Jira Playbook",
+    slug: 'jiraplaybook',
+    title: 'Jira Playbook',
     description:
-      "A practical delivery playbook to improve team alignment, planning and execution across Jira squads.",
-    display_photo: "/jiraplaybook/DisplayimageJiraplaybook.jpg",
-    tags: ["UX", "Way of working", "Playbook", "Workshop"],
+      'A practical delivery playbook to improve team alignment, planning and execution across Jira squads.',
+    display_photo: '/jiraplaybook/DisplayimageJiraplaybook.jpg',
+    tags: ['UX', 'Way of working', 'Playbook', 'Workshop'],
   },
 ];
 
 const Portfolio = () => {
   const trail = useTrail(3, {
-    from: { opacity: 0, transform: "translateY(30px)" },
-    to: { opacity: 1, transform: "translateY(0px)" },
+    from: { opacity: 0, transform: 'translateY(30px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
 
     delay: 200,
   });

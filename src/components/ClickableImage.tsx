@@ -1,6 +1,6 @@
-import { useState } from "react";
-import OptimizedImage from "./OptimizedImage";
-import ImageModal from "./ImageModal";
+import { useState } from 'react';
+import OptimizedImage from './OptimizedImage';
+import ImageModal from './ImageModal';
 
 export interface ClickableImageProps {
   src: string;
@@ -9,12 +9,7 @@ export interface ClickableImageProps {
   caption?: string;
 }
 
-const ClickableImage = ({
-  src,
-  alt,
-  className = "",
-  caption,
-}: ClickableImageProps) => {
+const ClickableImage = ({ src, alt, className = '', caption }: ClickableImageProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -31,18 +26,10 @@ const ClickableImage = ({
           loading="lazy"
         />
       </div>
-      {caption && (
-        <p className="text-center text-xl text-gray-600 mt-3 italic">{caption}</p>
-      )}
-      <ImageModal
-        src={src}
-        alt={alt}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      {caption && <p className="text-center text-xl text-gray-600 mt-3 italic">{caption}</p>}
+      <ImageModal src={src} alt={alt} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
 
 export default ClickableImage;
-

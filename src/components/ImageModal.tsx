@@ -1,6 +1,6 @@
-import { animated, useSpring } from "@react-spring/web";
-import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
+import { animated, useSpring } from '@react-spring/web';
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 export interface ImageModalProps {
   src: string;
@@ -15,7 +15,7 @@ const ImageModal = ({ src, alt, isOpen, onClose }: ImageModalProps) => {
   useEffect(() => {
     if (!isOpen) return;
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" || e.key === "Esc") {
+      if (e.key === 'Escape' || e.key === 'Esc') {
         if (isZoomed) {
           setIsZoomed(false);
         } else {
@@ -23,13 +23,13 @@ const ImageModal = ({ src, alt, isOpen, onClose }: ImageModalProps) => {
         }
       }
     };
-    document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, [isOpen, isZoomed, onClose]);
 
   const modalAnimation = useSpring({
     opacity: isOpen ? 1 : 0,
-    transform: isOpen ? "scale(1)" : "scale(0.95)",
+    transform: isOpen ? 'scale(1)' : 'scale(0.95)',
     config: { tension: 300, friction: 25 },
   });
 
@@ -39,7 +39,7 @@ const ImageModal = ({ src, alt, isOpen, onClose }: ImageModalProps) => {
   });
 
   const imageAnimation = useSpring({
-    transform: isZoomed ? "scale(2)" : "scale(1)",
+    transform: isZoomed ? 'scale(2)' : 'scale(1)',
     config: { tension: 200, friction: 20 },
   });
 
@@ -79,16 +79,14 @@ const ImageModal = ({ src, alt, isOpen, onClose }: ImageModalProps) => {
         </button>
         <div
           className={`overflow-auto max-h-[90vh] ${
-            isZoomed ? "cursor-zoom-out" : "cursor-zoom-in"
+            isZoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'
           }`}
         >
           <animated.img
             src={src}
             alt={alt}
             style={imageAnimation}
-            className={`w-full h-auto ${
-              isZoomed ? "cursor-zoom-out" : "cursor-zoom-in"
-            }`}
+            className={`w-full h-auto ${isZoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}
             onClick={handleImageClick}
           />
         </div>
@@ -100,4 +98,3 @@ const ImageModal = ({ src, alt, isOpen, onClose }: ImageModalProps) => {
 };
 
 export default ImageModal;
-

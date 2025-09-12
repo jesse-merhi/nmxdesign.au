@@ -1,12 +1,12 @@
-import { animated, useSpring } from "@react-spring/web";
-import { Link, useParams } from "react-router-dom";
+import { animated, useSpring } from '@react-spring/web';
+import { Link, useParams } from 'react-router-dom';
 
 const ProjectPage = () => {
   const { projectId } = useParams();
 
   const animation = useSpring({
-    from: { opacity: 0, transform: "translateY(20px)" },
-    to: { opacity: 1, transform: "translateY(0px)" },
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
   });
 
   return (
@@ -15,10 +15,7 @@ const ProjectPage = () => {
         Project: <span className="text-[#FF593E]">{projectId}</span>
       </h1>
       <p className="text-lg text-gray-600 mb-8">Coming soon!</p>
-      <Link
-        to="/portfolio"
-        className="text-[#AAAADD] hover:underline font-bold"
-      >
+      <Link to="/portfolio" className="text-[#AAAADD] hover:underline font-bold">
         ← Back to Portfolio
       </Link>
     </animated.div>

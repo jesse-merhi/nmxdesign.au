@@ -1,0 +1,22 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+build
+coverage
+
+# Generated
+*.tsbuildinfo
+
+# Assets and static files
+public
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+
+# Lockfiles
+bun.lock
+

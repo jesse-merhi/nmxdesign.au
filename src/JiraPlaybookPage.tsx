@@ -1,25 +1,25 @@
-import { animated, useTrail } from "@react-spring/web";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import OptimizedImage from "./components/OptimizedImage";
-import ClickableImage from "./components/ClickableImage";
-import { FiArrowLeft, FiArrowRight, FiDownload } from "react-icons/fi";
-import { Document, Page, pdfjs } from "react-pdf";
+import { animated, useTrail } from '@react-spring/web';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import OptimizedImage from './components/OptimizedImage';
+import ClickableImage from './components/ClickableImage';
+import { FiArrowLeft, FiArrowRight, FiDownload } from 'react-icons/fi';
+import { Document, Page, pdfjs } from 'react-pdf';
 
 // PDF.js worker configuration (same as Resume page)
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
 ).toString();
 
 // Click-to-zoom image component is now shared
 
 const JiraPlaybookPage = () => {
   const trail = useTrail(15, {
-    from: { opacity: 0, transform: "translateY(30px)" },
-    to: { opacity: 1, transform: "translateY(0px)" },
+    from: { opacity: 0, transform: 'translateY(30px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
     delay: 100,
   });
 
@@ -41,17 +41,14 @@ const JiraPlaybookPage = () => {
     setPageNumber((prev) => (prev < (numPages || 1) ? prev + 1 : prev));
   };
 
-  const pdfPath = "/jiraplaybook/Jira_Playbook.pdf";
+  const pdfPath = '/jiraplaybook/Jira_Playbook.pdf';
 
   return (
     <div className="min-h-screen bg-[#FFF6ED]/60 m-4 md:m-8">
       <div className="max-w-6xl mx-auto">
         {/* Back Button */}
         <animated.div style={trail[0]} className="mb-8">
-          <Link
-            to="/portfolio"
-            className="text-[#AAAADD] hover:underline font-bold text-lg"
-          >
+          <Link to="/portfolio" className="text-[#AAAADD] hover:underline font-bold text-lg">
             ← Back to Portfolio
           </Link>
         </animated.div>
@@ -75,7 +72,10 @@ const JiraPlaybookPage = () => {
             <div className="md:col-start-1 md:row-start-1">
               <h3 className="font-bold text-[#AAAADD] mb-1">Challenge</h3>
               <p className="text-gray-700">
-                The Atlassian design team needed a Jira design playbook to streamline internal design processes and create alignment across the team. Design teams lacked consistent practices for using Jira to track design work, leading to poor visibility and delayed projects.
+                The Atlassian design team needed a Jira design playbook to streamline internal
+                design processes and create alignment across the team. Design teams lacked
+                consistent practices for using Jira to track design work, leading to poor visibility
+                and delayed projects.
               </p>
             </div>
 
@@ -94,21 +94,31 @@ const JiraPlaybookPage = () => {
             <div className="md:col-start-1 md:row-start-2">
               <h3 className="font-bold text-[#AAAADD] mb-1">Target Users</h3>
               <div className="text-gray-700 space-y-0.5">
-                <p><strong>Design Managers:</strong> Need portfolio visibility and resource allocation</p>
-                <p><strong>Designers:</strong> Seek consistent ways of working and impact tracking</p>
+                <p>
+                  <strong>Design Managers:</strong> Need portfolio visibility and resource
+                  allocation
+                </p>
+                <p>
+                  <strong>Designers:</strong> Seek consistent ways of working and impact tracking
+                </p>
               </div>
             </div>
 
             <div className="md:col-start-2 md:row-start-2">
               <h3 className="font-bold text-[#AAAADD] mb-1">Impact</h3>
               <p className="text-gray-700">
-                50+ designers at Atlassian now use this playbook. Increased work visibility, strategic planning capabilities, and reduced designer burnout through better resource management.
+                50+ designers at Atlassian now use this playbook. Increased work visibility,
+                strategic planning capabilities, and reduced designer burnout through better
+                resource management.
               </p>
             </div>
           </div>
 
           <p className="text-gray-700 mt-6">
-            <strong>Overview:</strong> Standardizing a predictable and consistent tool for Cloud Readiness design team resulting in increased visibility of design work, more strategically planned projects, and capabilities to identify dependencies throughout the project lifecycle.
+            <strong>Overview:</strong> Standardizing a predictable and consistent tool for Cloud
+            Readiness design team resulting in increased visibility of design work, more
+            strategically planned projects, and capabilities to identify dependencies throughout the
+            project lifecycle.
           </p>
         </animated.div>
 
@@ -121,10 +131,15 @@ const JiraPlaybookPage = () => {
             <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
               <h4 className="font-bold text-[#AAAADD] mb-4">Context</h4>
               <p className="text-gray-700 mb-4">
-                Atlassian design teams don't use Jira consistently to track and maintain design project work. Some teams use Jira, some teams don't use Jira. We don't have a consistent practice on how design teams should collaborate with other cross-functional partners or among themselves.
+                Atlassian design teams don't use Jira consistently to track and maintain design
+                project work. Some teams use Jira, some teams don't use Jira. We don't have a
+                consistent practice on how design teams should collaborate with other
+                cross-functional partners or among themselves.
               </p>
               <p className="text-gray-700">
-                The design organization has initiatives to create a consistent practice for all designers. This includes <em>Velocity</em>, one of the five feedback loops for World-Class Design.
+                The design organization has initiatives to create a consistent practice for all
+                designers. This includes <em>Velocity</em>, one of the five feedback loops for
+                World-Class Design.
               </p>
             </div>
 
@@ -132,21 +147,35 @@ const JiraPlaybookPage = () => {
               <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
                 <h4 className="font-bold text-[#AAAADD] mb-4">Core Problems</h4>
                 <ul className="text-gray-700 space-y-2">
-                  <li>• <strong>Poor visibility</strong> of design work across Atlassian</li>
-                  <li>• <strong>Lack of strategic planning</strong> across multiple teams/projects</li>
-                  <li>• <strong>No dependency identification</strong> throughout project lifecycle</li>
-                  <li>• <strong>Unclear design capacity</strong> across current and future projects</li>
-                  <li>• <strong>No clear value prop</strong> for using Jira Epics, story points and sprints</li>
+                  <li>
+                    • <strong>Poor visibility</strong> of design work across Atlassian
+                  </li>
+                  <li>
+                    • <strong>Lack of strategic planning</strong> across multiple teams/projects
+                  </li>
+                  <li>
+                    • <strong>No dependency identification</strong> throughout project lifecycle
+                  </li>
+                  <li>
+                    • <strong>Unclear design capacity</strong> across current and future projects
+                  </li>
+                  <li>
+                    • <strong>No clear value prop</strong> for using Jira Epics, story points and
+                    sprints
+                  </li>
                 </ul>
               </div>
 
               <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
                 <h4 className="font-bold text-[#AAAADD] mb-4">Business Impact</h4>
                 <p className="text-gray-700 mb-4">
-                  This lack of visibility for managers and designers delays work, limits our ability to communicate deadlines to cross-functional partners, and causes us to set unrealistic expectations.
+                  This lack of visibility for managers and designers delays work, limits our ability
+                  to communicate deadlines to cross-functional partners, and causes us to set
+                  unrealistic expectations.
                 </p>
                 <p className="text-gray-700">
-                  <strong>Risk:</strong> Designer burnout, overloaded teams, and delayed feature rollouts to customers.
+                  <strong>Risk:</strong> Designer burnout, overloaded teams, and delayed feature
+                  rollouts to customers.
                 </p>
               </div>
             </div>
@@ -156,11 +185,16 @@ const JiraPlaybookPage = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h5 className="font-semibold text-gray-700 mb-2">Design Managers</h5>
-                  <p className="text-gray-700 text-sm">Need to make decisions about a managed portfolio of work and plan with greater transparency.</p>
+                  <p className="text-gray-700 text-sm">
+                    Need to make decisions about a managed portfolio of work and plan with greater
+                    transparency.
+                  </p>
                 </div>
                 <div>
                   <h5 className="font-semibold text-gray-700 mb-2">Designers</h5>
-                  <p className="text-gray-700 text-sm">Seek more consistent ways of working and help track their impact narrative.</p>
+                  <p className="text-gray-700 text-sm">
+                    Seek more consistent ways of working and help track their impact narrative.
+                  </p>
                 </div>
               </div>
             </div>
@@ -174,11 +208,10 @@ const JiraPlaybookPage = () => {
           </h2>
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-[#AAAADD] mb-4">
-                Two-Stream Approach
-              </h3>
+              <h3 className="text-2xl font-bold text-[#AAAADD] mb-4">Two-Stream Approach</h3>
               <p className="text-lg text-gray-700 mb-6">
-                I separated work into two separate streams to tackle both immediate team needs and broader organizational goals.
+                I separated work into two separate streams to tackle both immediate team needs and
+                broader organizational goals.
               </p>
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -208,7 +241,8 @@ const JiraPlaybookPage = () => {
                   Workshop with Stakeholders
                 </h3>
                 <p className="text-lg text-gray-700 mb-6">
-                  Created workshop with stakeholders to understand expectations and align on approach.
+                  Created workshop with stakeholders to understand expectations and align on
+                  approach.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-8 mt-4">
@@ -254,13 +288,14 @@ const JiraPlaybookPage = () => {
 
         {/* Survey Research */}
         <animated.section style={trail[5]} className="mb-16">
-          <h2 className="text-4xl font-bold text-gray-700 mb-8 font-pfMarlet">
-            Survey Research
-          </h2>
+          <h2 className="text-4xl font-bold text-gray-700 mb-8 font-pfMarlet">Survey Research</h2>
           <div className="space-y-8">
             <div>
               <p className="text-lg text-gray-700 mb-6">
-                The purpose of this survey was to gather insights into how people are currently tracking and planning their work, as well as their experiences with Jira Planning. By understanding what users like and dislike about the tool, we aimed to identify best practices and potential areas for improvement.
+                The purpose of this survey was to gather insights into how people are currently
+                tracking and planning their work, as well as their experiences with Jira Planning.
+                By understanding what users like and dislike about the tool, we aimed to identify
+                best practices and potential areas for improvement.
               </p>
 
               <ClickableImage
@@ -273,44 +308,55 @@ const JiraPlaybookPage = () => {
             <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
               <h4 className="font-bold text-[#AAAADD] mb-4">Our Hypothesis</h4>
               <p className="text-gray-700 text-lg font-medium">
-                Designers prefer to track work with a simple Jira configuration and need guidance on Jira best practices.
+                Designers prefer to track work with a simple Jira configuration and need guidance on
+                Jira best practices.
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold text-[#AAAADD] mb-6">Key Survey Findings</h3>
               <p className="text-lg text-gray-700 mb-6">
-                <strong>15 Cloud Readiness designers</strong> responded to the survey, revealing three critical insights:
+                <strong>15 Cloud Readiness designers</strong> responded to the survey, revealing
+                three critical insights:
               </p>
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
-                  <h4 className="font-bold text-[#AAAADD] mb-3">1. Simplified Jira Best Practices</h4>
+                  <h4 className="font-bold text-[#AAAADD] mb-3">
+                    1. Simplified Jira Best Practices
+                  </h4>
                   <p className="text-gray-700 text-sm mb-3">
-                    <strong>60% of designers</strong> said simplified Jira best practices were most helpful for work tracking.
+                    <strong>60% of designers</strong> said simplified Jira best practices were most
+                    helpful for work tracking.
                   </p>
                   <blockquote className="text-gray-600 italic text-sm border-l-4 border-[#AAAADD] pl-3">
-                    "I don't find Jira easy to use, what is meant to go in an Epic, Child issue, etc. Would be great to have some structure to understand how we should properly be adding our work."
+                    "I don't find Jira easy to use, what is meant to go in an Epic, Child issue,
+                    etc. Would be great to have some structure to understand how we should properly
+                    be adding our work."
                   </blockquote>
                 </div>
 
                 <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
                   <h4 className="font-bold text-[#AAAADD] mb-3">2. Weekly Updates</h4>
                   <p className="text-gray-700 text-sm mb-3">
-                    <strong>40% of designers</strong> track their work weekly, with another 40% configuring tasks at the start of every week.
+                    <strong>40% of designers</strong> track their work weekly, with another 40%
+                    configuring tasks at the start of every week.
                   </p>
                   <p className="text-gray-600 text-sm">
-                    Work updates should align with existing weekly practices like Atlas tickets for a more cohesive system.
+                    Work updates should align with existing weekly practices like Atlas tickets for
+                    a more cohesive system.
                   </p>
                 </div>
 
                 <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
                   <h4 className="font-bold text-[#AAAADD] mb-3">3. Project-Based Epics</h4>
                   <p className="text-gray-700 text-sm mb-3">
-                    <strong>86.7% of designers</strong> mentioned that showing work visibility is the biggest purpose for Jira planning.
+                    <strong>86.7% of designers</strong> mentioned that showing work visibility is
+                    the biggest purpose for Jira planning.
                   </p>
                   <p className="text-gray-600 text-sm">
-                    Epic tickets should be structured around projects and milestones, breaking down into TAW phase issues.
+                    Epic tickets should be structured around projects and milestones, breaking down
+                    into TAW phase issues.
                   </p>
                 </div>
               </div>
@@ -325,9 +371,12 @@ const JiraPlaybookPage = () => {
           </h2>
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-[#AAAADD] mb-6">Multiple Options & Alignment</h3>
+              <h3 className="text-2xl font-bold text-[#AAAADD] mb-6">
+                Multiple Options & Alignment
+              </h3>
               <p className="text-lg text-gray-700 mb-6">
-                Created multiple workflow options and gathered stakeholders for alignment on the best approach.
+                Created multiple workflow options and gathered stakeholders for alignment on the
+                best approach.
               </p>
 
               <ClickableImage
@@ -343,15 +392,21 @@ const JiraPlaybookPage = () => {
                 <div className="space-y-3">
                   <div>
                     <h5 className="font-semibold text-gray-700">Workflow: Enhanced Kanban</h5>
-                    <p className="text-gray-600 text-sm">Added "Paused" status to handle deprioritized work and reduce TODO clutter</p>
+                    <p className="text-gray-600 text-sm">
+                      Added "Paused" status to handle deprioritized work and reduce TODO clutter
+                    </p>
                   </div>
                   <div>
                     <h5 className="font-semibold text-gray-700">Epic Structure: TAW Phases</h5>
-                    <p className="text-gray-600 text-sm">Organize work by Think, Align, Work phases rather than arbitrary milestones</p>
+                    <p className="text-gray-600 text-sm">
+                      Organize work by Think, Align, Work phases rather than arbitrary milestones
+                    </p>
                   </div>
                   <div>
                     <h5 className="font-semibold text-gray-700">Planning Cycle: Weekly</h5>
-                    <p className="text-gray-600 text-sm">1-week planning cycles align with designer review patterns</p>
+                    <p className="text-gray-600 text-sm">
+                      1-week planning cycles align with designer review patterns
+                    </p>
                   </div>
                 </div>
               </div>
@@ -359,10 +414,22 @@ const JiraPlaybookPage = () => {
               <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
                 <h4 className="font-bold text-[#AAAADD] mb-4">🔑 Key Recommendations</h4>
                 <ul className="text-gray-700 space-y-2 text-sm">
-                  <li>• <strong>Simplified best practices:</strong> Focus on most important fields (project name, deadlines, assignee, priority)</li>
-                  <li>• <strong>Weekly rituals:</strong> Incorporate design rituals for tracking and updating work</li>
-                  <li>• <strong>Project visibility:</strong> Structure Epics around projects with clear TAW phase breakdown</li>
-                  <li>• <strong>Template creation:</strong> Provide ready-to-use Jira templates for designers</li>
+                  <li>
+                    • <strong>Simplified best practices:</strong> Focus on most important fields
+                    (project name, deadlines, assignee, priority)
+                  </li>
+                  <li>
+                    • <strong>Weekly rituals:</strong> Incorporate design rituals for tracking and
+                    updating work
+                  </li>
+                  <li>
+                    • <strong>Project visibility:</strong> Structure Epics around projects with
+                    clear TAW phase breakdown
+                  </li>
+                  <li>
+                    • <strong>Template creation:</strong> Provide ready-to-use Jira templates for
+                    designers
+                  </li>
                 </ul>
               </div>
             </div>
@@ -379,21 +446,43 @@ const JiraPlaybookPage = () => {
               <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
                 <h4 className="font-bold text-[#AAAADD] mb-4">🎯 Key Outcomes</h4>
                 <ul className="text-gray-700 space-y-2">
-                  <li>• <strong>50+ designers</strong> in the team now use this playbook</li>
-                  <li>• <strong>Increased work visibility</strong> across design teams and leadership</li>
-                  <li>• <strong>Strategic planning capabilities</strong> for resource allocation</li>
-                  <li>• <strong>Reduced designer burnout</strong> through better workload management</li>
-                  <li>• <strong>Integration potential</strong> with design operations Unified Workflow project</li>
+                  <li>
+                    • <strong>50+ designers</strong> in the team now use this playbook
+                  </li>
+                  <li>
+                    • <strong>Increased work visibility</strong> across design teams and leadership
+                  </li>
+                  <li>
+                    • <strong>Strategic planning capabilities</strong> for resource allocation
+                  </li>
+                  <li>
+                    • <strong>Reduced designer burnout</strong> through better workload management
+                  </li>
+                  <li>
+                    • <strong>Integration potential</strong> with design operations Unified Workflow
+                    project
+                  </li>
                 </ul>
               </div>
 
               <div className="bg-white/60 p-6 rounded-xl border border-gray-200">
                 <h4 className="font-bold text-[#AAAADD] mb-4">📚 Key Learnings</h4>
                 <ul className="text-gray-700 space-y-2">
-                  <li>• <strong>Stakeholder alignment:</strong> Critical for adoption and success</li>
-                  <li>• <strong>Framework integration:</strong> Building on existing guidelines rather than creating from scratch</li>
-                  <li>• <strong>Playbook creation:</strong> Balancing comprehensive guidance with simplicity</li>
-                  <li>• <strong>Change management:</strong> Importance of involving end users in design process</li>
+                  <li>
+                    • <strong>Stakeholder alignment:</strong> Critical for adoption and success
+                  </li>
+                  <li>
+                    • <strong>Framework integration:</strong> Building on existing guidelines rather
+                    than creating from scratch
+                  </li>
+                  <li>
+                    • <strong>Playbook creation:</strong> Balancing comprehensive guidance with
+                    simplicity
+                  </li>
+                  <li>
+                    • <strong>Change management:</strong> Importance of involving end users in
+                    design process
+                  </li>
                 </ul>
               </div>
             </div>
@@ -403,11 +492,17 @@ const JiraPlaybookPage = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h5 className="font-semibold text-gray-700 mb-2">Epic Synchronization</h5>
-                  <p className="text-gray-600 text-sm">Explore ways to connect Jira Epics across different projects to reduce duplication of work tracking efforts.</p>
+                  <p className="text-gray-600 text-sm">
+                    Explore ways to connect Jira Epics across different projects to reduce
+                    duplication of work tracking efforts.
+                  </p>
                 </div>
                 <div>
                   <h5 className="font-semibold text-gray-700 mb-2">Leadership Alignment</h5>
-                  <p className="text-gray-600 text-sm">Establish collective expectations between triads and design leadership for work visibility and priority tracking.</p>
+                  <p className="text-gray-600 text-sm">
+                    Establish collective expectations between triads and design leadership for work
+                    visibility and priority tracking.
+                  </p>
                 </div>
               </div>
             </div>
@@ -420,7 +515,8 @@ const JiraPlaybookPage = () => {
             Complete Case Study
           </h2>
           <p className="text-lg text-gray-700 mb-6">
-            View the complete case study documentation with detailed workflows, templates, and implementation guidelines.
+            View the complete case study documentation with detailed workflows, templates, and
+            implementation guidelines.
           </p>
           <div className="w-full max-w-4xl mx-auto">
             <div className="mb-4 flex justify-between items-center">
@@ -433,7 +529,7 @@ const JiraPlaybookPage = () => {
                   <FiArrowLeft />
                 </button>
                 <span className="text-gray-700 font-medium">
-                  Page {pageNumber} of {numPages || "--"}
+                  Page {pageNumber} of {numPages || '--'}
                 </span>
                 <button
                   onClick={goToNextPage}
@@ -489,14 +585,8 @@ const JiraPlaybookPage = () => {
         </animated.section>
 
         {/* Navigation */}
-        <animated.div
-          style={trail[12]}
-          className="text-center pt-8 border-t border-gray-200"
-        >
-          <Link
-            to="/portfolio"
-            className="text-[#AAAADD] hover:underline font-bold text-lg"
-          >
+        <animated.div style={trail[12]} className="text-center pt-8 border-t border-gray-200">
+          <Link to="/portfolio" className="text-[#AAAADD] hover:underline font-bold text-lg">
             ← Back to Portfolio
           </Link>
         </animated.div>

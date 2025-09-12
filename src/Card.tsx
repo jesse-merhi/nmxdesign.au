@@ -1,6 +1,6 @@
-import { animated, SpringValue, useSpring } from "@react-spring/web";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { animated, SpringValue, useSpring } from '@react-spring/web';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface CardProps {
   slug: string;
@@ -17,10 +17,10 @@ const Card = ({ slug, title, description, display_photo, tags, style }: CardProp
 
   // This spring handles the hover effect
   const hoverAnimation = useSpring({
-    transform: isHovered ? "translateY(-8px)" : "translateY(0px)",
+    transform: isHovered ? 'translateY(-8px)' : 'translateY(0px)',
     boxShadow: isHovered
-      ? "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)"
-      : "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+      ? '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)'
+      : '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
     config: { tension: 300, friction: 15 },
   });
 
@@ -41,9 +41,7 @@ const Card = ({ slug, title, description, display_photo, tags, style }: CardProp
           />
         ) : null}
         <div className="p-6 flex-1 flex flex-col">
-          <h2 className="text-3xl font-bold text-[#AAAADD] mb-3 font-pfMarlet">
-            {title}
-          </h2>
+          <h2 className="text-3xl font-bold text-[#AAAADD] mb-3 font-pfMarlet">{title}</h2>
           <p className="text-gray-700 text-lg">{description}</p>
           {Array.isArray(tags) && tags.length > 0 ? (
             <div className="mt-auto pt-5 flex flex-wrap gap-2">

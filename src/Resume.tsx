@@ -1,13 +1,13 @@
-import { animated, useSpring } from "@react-spring/web";
-import { useState } from "react";
-import { FiArrowLeft, FiArrowRight, FiDownload } from "react-icons/fi";
-import { Document, Page, pdfjs } from "react-pdf";
+import { animated, useSpring } from '@react-spring/web';
+import { useState } from 'react';
+import { FiArrowLeft, FiArrowRight, FiDownload } from 'react-icons/fi';
+import { Document, Page, pdfjs } from 'react-pdf';
 
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
 ).toString();
 
 const Resume = () => {
@@ -17,7 +17,7 @@ const Resume = () => {
 
   const animation = useSpring({
     opacity: isPdfLoaded ? 1 : 0,
-    transform: isPdfLoaded ? "translateY(0px)" : "translateY(20px)",
+    transform: isPdfLoaded ? 'translateY(0px)' : 'translateY(20px)',
     config: { tension: 220, friction: 30 },
     delay: 100,
   });
@@ -35,7 +35,7 @@ const Resume = () => {
     setPageNumber((prev) => (prev < (numPages || 1) ? prev + 1 : prev));
   };
 
-  const pdfPath = "/resume.pdf";
+  const pdfPath = '/resume.pdf';
 
   const LoadingSpinner = () => (
     <div className="flex justify-center items-center h-full p-8">
@@ -47,22 +47,15 @@ const Resume = () => {
   const ErrorMessage = () => (
     <p className="p-4 text-center text-red-500">
       Failed to load PDF.
-      <a
-        href={pdfPath}
-        download="MyResume.pdf"
-        className="font-bold underline hover:text-red-700"
-      >
-        {" "}
+      <a href={pdfPath} download="MyResume.pdf" className="font-bold underline hover:text-red-700">
+        {' '}
         Download it here.
       </a>
     </p>
   );
 
   return (
-    <animated.div
-      style={animation}
-      className="flex flex-col items-center h-full py-8"
-    >
+    <animated.div style={animation} className="flex flex-col items-center h-full py-8">
       <div className="w-full max-w-4xl h-full flex flex-col">
         <div className="mb-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -74,7 +67,7 @@ const Resume = () => {
               <FiArrowLeft />
             </button>
             <span className="text-gray-700 font-medium">
-              Page {pageNumber} of {numPages || "--"}
+              Page {pageNumber} of {numPages || '--'}
             </span>
             <button
               onClick={goToNextPage}

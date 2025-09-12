@@ -1,7 +1,7 @@
-import { animated, useTransition } from "@react-spring/web";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import DrawingCirclesSVG from "./CircleAnimatedSVG";
+import { animated, useTransition } from '@react-spring/web';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import DrawingCirclesSVG from './CircleAnimatedSVG';
 
 interface AnimatedIndicatorProps {
   show: boolean;
@@ -24,7 +24,7 @@ const AnimatedIndicator = ({ show, scale, left }: AnimatedIndicatorProps) => {
           className="absolute pointer-events-none"
           style={{
             ...style,
-            top: "-5px",
+            top: '-5px',
             left: left,
             width: 130,
             height: 46,
@@ -32,7 +32,7 @@ const AnimatedIndicator = ({ show, scale, left }: AnimatedIndicatorProps) => {
         >
           <DrawingCirclesSVG />
         </animated.div>
-      )
+      ),
   );
 };
 
@@ -51,7 +51,7 @@ export const NavLink = ({
   className,
   onClick,
   scale = 1,
-  left = "-25px",
+  left = '-25px',
 }: NavLinkProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const showIndicator = isActive || isHovered;

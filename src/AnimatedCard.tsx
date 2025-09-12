@@ -1,5 +1,5 @@
-import { useInView, useSpring } from "@react-spring/web";
-import Card from "./Card.tsx";
+import { useInView, useSpring } from '@react-spring/web';
+import Card from './Card.tsx';
 
 export type Project = {
   slug: string;
@@ -11,12 +11,12 @@ export type Project = {
 
 const AnimatedCard = ({ item }: { item: Project }) => {
   const [ref, inView] = useInView({
-    rootMargin: "-10% 0%",
+    rootMargin: '-10% 0%',
   });
 
   const animationStyle = useSpring({
     opacity: inView ? 1 : 0,
-    transform: inView ? "translateY(0px)" : "translateY(60px)",
+    transform: inView ? 'translateY(0px)' : 'translateY(60px)',
     config: { mass: 1, tension: 150, friction: 30 },
     delay: 200,
   });

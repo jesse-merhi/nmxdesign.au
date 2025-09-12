@@ -1,5 +1,5 @@
-import { animated, useSpring } from "@react-spring/web";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { animated, useSpring } from '@react-spring/web';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 const DrawingCirclesSVG = () => {
   const path1Ref = useRef<SVGPathElement>(null);
@@ -67,7 +67,7 @@ const DrawingCirclesSVG = () => {
       viewBox="0 0 130 46"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ opacity: isReady ? 1 : 0, transition: "opacity 0.2s" }}
+      style={{ opacity: isReady ? 1 : 0, transition: 'opacity 0.2s' }}
     >
       <animated.path
         ref={path1Ref}

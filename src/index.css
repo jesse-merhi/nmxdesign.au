@@ -4,16 +4,16 @@
 
 /* --- Font Definitions (Unchanged) --- */
 @font-face {
-  font-family: "Lindsey Signature";
-  src: url("../fonts/LindseySignature.ttf");
+  font-family: 'Lindsey Signature';
+  src: url('../fonts/LindseySignature.ttf');
 }
 @font-face {
-  font-family: "PF Marlet Medium";
-  src: url("../fonts/PF_Marlet_Display_Medium.otf");
+  font-family: 'PF Marlet Medium';
+  src: url('../fonts/PF_Marlet_Display_Medium.otf');
 }
 @font-face {
-  font-family: "PF Marlet Medium Italic";
-  src: url("../fonts/PF_Marlet_Display_Medium_Italic.otf");
+  font-family: 'PF Marlet Medium Italic';
+  src: url('../fonts/PF_Marlet_Display_Medium_Italic.otf');
 }
 
 /* --- CORRECTED GLOBAL STYLES --- */
@@ -24,13 +24,13 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 body {
   /* Set a default font and prevent the body itself from showing scrollbars */
   font-family: 'Inter', sans-serif;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 h1 {
@@ -40,7 +40,10 @@ h1 {
 
 /* --- Utility Classes (Unchanged) --- */
 .text-border2 {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
     1px 1px 0 #000;
 }
 
