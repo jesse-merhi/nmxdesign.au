@@ -1,5 +1,5 @@
 import { animated, useTrail } from '@react-spring/web';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import OptimizedImage from './components/OptimizedImage';
 import ClickableImage from './components/ClickableImage';
@@ -27,6 +27,19 @@ const JiraPlaybookPage = () => {
   const [numPages, setNumPages] = useState<null | number>(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [isPdfLoaded, setPdfLoaded] = useState(false);
+  const pdfContainerRef = useRef<HTMLDivElement | null>(null);
+  const [pageWidth, setPageWidth] = useState<number>(800);
+
+  useEffect(() => {
+    const el = pdfContainerRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => {
+      const w = el.clientWidth;
+      setPageWidth(Math.min(800, Math.max(320, w - 24)));
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
@@ -549,7 +562,10 @@ const JiraPlaybookPage = () => {
               </a>
             </div>
 
-            <div className="h-[700px] w-full border-2 border-gray-200 rounded-lg shadow-inner overflow-scroll bg-white/60">
+            <div
+              ref={pdfContainerRef}
+              className="h-[700px] w-full border-2 border-gray-200 rounded-lg shadow-inner overflow-auto bg-white/60"
+            >
               <Document
                 file={pdfPath}
                 onLoadSuccess={onDocumentLoadSuccess}
@@ -577,7 +593,7 @@ const JiraPlaybookPage = () => {
                   pageNumber={pageNumber}
                   renderTextLayer={true}
                   renderAnnotationLayer={false}
-                  width={800}
+                  width={pageWidth}
                 />
               </Document>
             </div>

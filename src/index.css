@@ -20,17 +20,15 @@
 html,
 body,
 #root {
-  /* This ensures the entire document structure fills the viewport height */
-  height: 100%;
+  /* Allow natural page scrolling; ensure base sizing */
+  min-height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 body {
-  /* Set a default font and prevent the body itself from showing scrollbars */
   font-family: 'Inter', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden; /* avoid accidental horizontal scroll */
 }
 
 h1 {

@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div
-      className="w-screen h-screen flex flex-col relative"
+      className="w-screen min-h-screen flex flex-col relative"
       style={{
         backgroundColor: '#FFF6ED',
         backgroundImage: 'url(/bg.svg)',
@@ -95,7 +95,7 @@ function App() {
           ),
       )}
 
-      <main className="w-full flex-grow relative overflow-y-auto">
+      <main className="w-full flex-grow relative pb-12">
         {transitions((style, outlet) => (
           <animated.div style={style}>{outlet}</animated.div>
         ))}

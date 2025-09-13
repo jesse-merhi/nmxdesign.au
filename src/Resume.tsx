@@ -1,5 +1,5 @@
 import { animated, useSpring } from '@react-spring/web';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FiArrowLeft, FiArrowRight, FiDownload } from 'react-icons/fi';
 import { Document, Page, pdfjs } from 'react-pdf';
 
@@ -36,6 +36,20 @@ const Resume = () => {
   };
 
   const pdfPath = '/resume.pdf';
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [pageWidth, setPageWidth] = useState<number>(800);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => {
+      const w = el.clientWidth;
+      // Keep within 800px but fit container on small screens, with small padding
+      setPageWidth(Math.min(800, Math.max(320, w - 24)));
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const LoadingSpinner = () => (
     <div className="flex justify-center items-center h-full p-8">
@@ -87,7 +101,10 @@ const Resume = () => {
           </a>
         </div>
 
-        <div className="h-[90%] w-full border-2 border-gray-200 rounded-lg shadow-inner overflow-scroll">
+        <div
+          ref={containerRef}
+          className="h-[90%] w-full border-2 border-gray-200 rounded-lg shadow-inner overflow-auto"
+        >
           <Document
             file={pdfPath}
             onLoadSuccess={onDocumentLoadSuccess}
@@ -95,12 +112,7 @@ const Resume = () => {
             error={<ErrorMessage />}
             className="flex justify-center"
           >
-            <Page
-              pageNumber={pageNumber}
-              renderTextLayer={true}
-              renderAnnotationLayer={false}
-              width={800}
-            />
+            <Page pageNumber={pageNumber} renderTextLayer={true} renderAnnotationLayer={false} width={pageWidth} />
           </Document>
         </div>
       </div>
