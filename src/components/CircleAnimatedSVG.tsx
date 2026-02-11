@@ -29,42 +29,104 @@ const DrawingCirclesSVG = ({ color = '#ABAADE', width = 130, height = 46 }: Draw
     }
   }, []);
 
-  const createAnimationSequence = (index: number) =>
-    useSpring({
-      pause: !isReady,
-      from: { strokeDashoffset: 0 },
-      to: async (next) => {
-        await next({
-          strokeDashoffset: 0,
-          config: { duration: 1500 },
-          delay: delays[index],
-        });
+  const animation1 = useSpring({
+    pause: !isReady,
+    from: { strokeDashoffset: 0 },
+    to: async (next) => {
+      await next({
+        strokeDashoffset: 0,
+        config: { duration: 1500 },
+        delay: delays[0],
+      });
 
-        while (true) {
-          if (lengths[index]) {
-            await next({
-              strokeDashoffset: -lengths[index],
-              config: { duration: 1500 },
-            });
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        if (lengths[0]) {
+          await next({
+            strokeDashoffset: -lengths[0],
+            config: { duration: 1500 },
+          });
 
-            await next({
-              strokeDashoffset: lengths[index],
-              immediate: true,
-            });
+          await next({
+            strokeDashoffset: lengths[0],
+            immediate: true,
+          });
 
-            await next({
-              strokeDashoffset: 0,
-              config: { duration: 1500 },
-              delay: 500,
-            });
-          }
+          await next({
+            strokeDashoffset: 0,
+            config: { duration: 1500 },
+            delay: 500,
+          });
         }
-      },
-    });
+      }
+    },
+  });
 
-  const animation1 = createAnimationSequence(0);
-  const animation2 = createAnimationSequence(1);
-  const animation3 = createAnimationSequence(2);
+  const animation2 = useSpring({
+    pause: !isReady,
+    from: { strokeDashoffset: 0 },
+    to: async (next) => {
+      await next({
+        strokeDashoffset: 0,
+        config: { duration: 1500 },
+        delay: delays[1],
+      });
+
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        if (lengths[1]) {
+          await next({
+            strokeDashoffset: -lengths[1],
+            config: { duration: 1500 },
+          });
+
+          await next({
+            strokeDashoffset: lengths[1],
+            immediate: true,
+          });
+
+          await next({
+            strokeDashoffset: 0,
+            config: { duration: 1500 },
+            delay: 500,
+          });
+        }
+      }
+    },
+  });
+
+  const animation3 = useSpring({
+    pause: !isReady,
+    from: { strokeDashoffset: 0 },
+    to: async (next) => {
+      await next({
+        strokeDashoffset: 0,
+        config: { duration: 1500 },
+        delay: delays[2],
+      });
+
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        if (lengths[2]) {
+          await next({
+            strokeDashoffset: -lengths[2],
+            config: { duration: 1500 },
+          });
+
+          await next({
+            strokeDashoffset: lengths[2],
+            immediate: true,
+          });
+
+          await next({
+            strokeDashoffset: 0,
+            config: { duration: 1500 },
+            delay: 500,
+          });
+        }
+      }
+    },
+  });
 
   return (
     <svg

@@ -26,7 +26,7 @@ const JiraPlaybookPage = () => {
   // PDF state (reusing approach from Resume page)
   const [numPages, setNumPages] = useState<null | number>(null);
   const [pageNumber, setPageNumber] = useState(1);
-  const [isPdfLoaded, setPdfLoaded] = useState(false);
+  const [, setPdfLoaded] = useState(false);
   const pdfContainerRef = useRef<HTMLDivElement | null>(null);
   const [pageWidth, setPageWidth] = useState<number>(800);
 

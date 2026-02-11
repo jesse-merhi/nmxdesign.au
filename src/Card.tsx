@@ -9,6 +9,7 @@ interface CardProps {
   display_photo?: string;
   tags?: string[];
   // This correctly accepts the animation style from the parent
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   style: { [key: string]: SpringValue<any> };
 }
 
