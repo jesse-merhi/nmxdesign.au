@@ -11,6 +11,7 @@ export interface ImageModalProps {
 
 const ImageModal = ({ src, alt, isOpen, onClose }: ImageModalProps) => {
   const [isZoomed, setIsZoomed] = useState(false);
+  const [zoomOrigin, setZoomOrigin] = useState({ x: 50, y: 50 });
 
   useEffect(() => {
     if (!isOpen) return;
@@ -40,18 +41,28 @@ const ImageModal = ({ src, alt, isOpen, onClose }: ImageModalProps) => {
 
   const imageAnimation = useSpring({
     transform: isZoomed ? 'scale(2)' : 'scale(1)',
+    transformOrigin: `${zoomOrigin.x}% ${zoomOrigin.y}%`,
     config: { tension: 200, friction: 20 },
   });
 
   if (!isOpen) return null;
 
-  const handleImageClick = (e: React.MouseEvent) => {
+  const handleImageClick = (e: React.MouseEvent<HTMLImageElement>) => {
     e.stopPropagation();
+
+    if (!isZoomed) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      setZoomOrigin({ x, y });
+    }
+
     setIsZoomed(!isZoomed);
   };
 
   const handleModalClose = () => {
     setIsZoomed(false);
+    setZoomOrigin({ x: 50, y: 50 });
     onClose();
   };
 

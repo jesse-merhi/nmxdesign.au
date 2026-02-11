@@ -27,8 +27,8 @@ const UplinkPage = () => {
         <animated.div style={trail[1]} className="mb-16">
           <h1 className="text-6xl font-bold text-gray-700 mb-6 font-pfMarlet">Uplinked</h1>
           <OptimizedImage
-            src="/uplinked/header_image.jpeg"
-            alt="Uplinked case study header image"
+            src="/uplinked/FinalDashboardFigma.jpg"
+            alt="Uplinked dashboard design with Figma components"
             className="w-full rounded-xl shadow-lg mt-2 mb-8"
             aspectRatio="16/9"
             loading="eager"
@@ -446,39 +446,63 @@ const UplinkPage = () => {
         {/* Final High-Fidelity Designs */}
         <animated.div style={trail[9]} className="mb-16">
           <h2 className="text-4xl font-bold mb-6 font-pfMarlet text-gray-700">
-            Final High-Fidelity Designs
+            Refined Final Design (Iteration 2)
           </h2>
 
           <div className="bg-white/60 p-8 rounded-xl border border-gray-200 shadow-sm">
             <p className="text-gray-700 leading-relaxed mb-6">
-              The final high-fidelity designs incorporated user feedback, technical constraints, and
-              business requirements into a cohesive operational dashboard.
+              The initial high-fidelity pass (Iteration 1) established the core structure and
+              information hierarchy. After review, I pushed the visual system further to modernise
+              the layout, refine spacing and typography, and standardise components for scale.
             </p>
 
             <h3 className="text-2xl font-bold mb-4 font-pfMarlet text-[#AAAADD]">
-              Web Dashboard - Final Desktop
+              Iteration 1 – High-Fidelity Baseline (Desktop + Mobile)
             </h3>
-            <ClickableImage
-              src="/uplinked/final_desktop.jpeg"
-              alt="Final desktop dashboard design"
-              caption="Final desktop dashboard design"
-            />
+            <div className="grid md:grid-cols-2 gap-8 mb-6">
+              <ClickableImage
+                src="/uplinked/final_desktop.jpeg"
+                alt="Iteration 1 desktop dashboard design"
+                caption="Iteration 1 desktop dashboard design"
+              />
+              <ClickableImage
+                src="/uplinked/final_mobile.jpeg"
+                alt="Iteration 1 mobile dashboard design"
+                caption="Iteration 1 mobile dashboard design"
+              />
+            </div>
 
-            <h3 className="text-2xl font-bold mb-4 mt-8 font-pfMarlet text-[#AAAADD]">
-              Mobile Dashboard - Final Mobile
-            </h3>
-            <ClickableImage
-              src="/uplinked/final_mobile.jpeg"
-              alt="Final mobile dashboard design"
-              caption="Final mobile dashboard design"
-            />
-
-            <p className="text-gray-700 leading-relaxed mt-6">
-              The mobile version maintains all critical functionality while optimizing for touch
-              interactions and field use scenarios, ensuring administrators can utilise the
-              application from anywhere.
+            <p className="text-gray-700 leading-relaxed mb-6">
+              The mobile version maintained the critical functionality while optimising for touch
+              interactions and field use scenarios.
             </p>
-            {/* Removed the second placeholder note */}
+
+            <h3 className="text-2xl font-bold mb-4 font-pfMarlet text-[#AAAADD]">
+              Iteration 2 – Modernised Final Dashboard
+            </h3>
+            <ClickableImage
+              src="/uplinked/FinalDashboardDesign.png"
+              alt="Iteration 2 refined dashboard design"
+              caption="Iteration 2 refined dashboard design"
+            />
+
+            <div className="grid md:grid-cols-2 gap-6 mt-6">
+              <div className="bg-[#AAAADD]/10 p-5 rounded-lg">
+                <h4 className="text-lg font-bold mb-3 text-[#AAAADD]">What changed</h4>
+                <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
+                  <li>Updated typography scale and spacing for a cleaner rhythm</li>
+                  <li>Stronger hierarchy for key metrics, alerts, and actions</li>
+                  <li>Simplified surfaces with clearer contrast and fewer borders</li>
+                  <li>Standardised components for reuse and future feature growth</li>
+                  <li>Refined alignment and density for data-heavy sections</li>
+                </ul>
+              </div>
+              <ClickableImage
+                src="/uplinked/FinalDashboardFigma.jpg"
+                alt="Figma components surrounding the final dashboard"
+                caption="Figma components and variants supporting the refined layout"
+              />
+            </div>
           </div>
         </animated.div>
 
