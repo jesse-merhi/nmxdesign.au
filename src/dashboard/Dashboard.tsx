@@ -112,14 +112,16 @@ function Dashboard() {
                 src="/Aboutme/Papertape.png"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute top-0 -left-4 -rotate-12 w-36 sm:w-40 brightness-200"
+                className="pointer-events-none select-none absolute top-0 -left-4 -rotate-12 w-36 sm:w-40"
               />
-              <img
-                src="/Aboutme/Creativephoto.png"
-                alt="Sketching ideas on a tablet"
-                className="w-full h-64 sm:h-72 object-cover rounded-md mix-blend-multiply"
-                loading="lazy"
-              />
+              <div className="w-full h-64 sm:h-72 rounded-md overflow-hidden">
+                <img
+                  src="/Aboutme/Creativephoto.png"
+                  alt="Sketching ideas on a tablet"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
             <p className="font-pfMarlet text-[#184027] mt-6">
               Exploring innovative ideas and thinks of possibilities & unique solutions
@@ -142,14 +144,16 @@ function Dashboard() {
                 src="/Aboutme/Papertape.png"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute -top-4 left-1/2 -translate-x-1/2 rotate-2 w-36 sm:w-40 brightness-200"
+                className="pointer-events-none select-none absolute -top-4 left-1/2 -translate-x-1/2 rotate-2 w-36 sm:w-40"
               />
-              <img
-                src="/Aboutme/Experimenterphoto.png"
-                alt="Planning experiments on paper"
-                className="w-full h-64 sm:h-72 object-cover rounded-md mix-blend-multiply"
-                loading="lazy"
-              />
+              <div className="w-full h-64 sm:h-72 rounded-md overflow-hidden mt-4">
+                <img
+                  src="/Aboutme/Experimenterphoto.png"
+                  alt="Planning experiments on paper"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
             <p className="font-pfMarlet text-[#184027] mt-6">
               Learning and tinkering with new technologies
@@ -172,14 +176,16 @@ function Dashboard() {
                 src="/Aboutme/Papertape.png"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute -top-4 -right-4 rotate-12 w-36 sm:w-40 brightness-200"
+                className="pointer-events-none select-none absolute -top-4 -right-4 rotate-12 w-36 sm:w-40"
               />
-              <img
-                src="/Aboutme/Candoerphoto.png"
-                alt="Presenting and facilitating a session"
-                className="w-full h-64 sm:h-72 object-cover rounded-md mix-blend-multiply"
-                loading="lazy"
-              />
+              <div className="w-full h-64 sm:h-72 rounded-md overflow-hidden">
+                <img
+                  src="/Aboutme/Candoerphoto.png"
+                  alt="Presenting and facilitating a session"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
             <p className="font-pfMarlet text-[#184027] mt-6">
               Reliable and executes giving everything a go
