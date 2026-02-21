@@ -112,12 +112,12 @@ function Dashboard() {
                 src="/Aboutme/Papertape.png"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute -top-4 left-4 -rotate-12 w-36 sm:w-40 opacity-90"
+                className="pointer-events-none select-none absolute top-0 -left-4 -rotate-12 w-36 sm:w-40"
               />
               <img
                 src="/Aboutme/Creativephoto.png"
                 alt="Sketching ideas on a tablet"
-                className="w-full h-64 sm:h-72 object-cover rounded-md"
+                className="w-full h-64 sm:h-72 object-cover rounded-md mix-blend-multiply"
                 loading="lazy"
               />
             </div>
@@ -142,12 +142,12 @@ function Dashboard() {
                 src="/Aboutme/Papertape.png"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute -top-4 left-1/2 -translate-x-1/2 rotate-2 w-36 sm:w-40 opacity-90"
+                className="pointer-events-none select-none absolute -top-4 left-1/2 -translate-x-1/2 rotate-2 w-36 sm:w-40"
               />
               <img
                 src="/Aboutme/Experimenterphoto.png"
                 alt="Planning experiments on paper"
-                className="w-full h-64 sm:h-72 object-cover rounded-md"
+                className="w-full h-64 sm:h-72 object-cover rounded-md mix-blend-multiply"
                 loading="lazy"
               />
             </div>
@@ -172,12 +172,12 @@ function Dashboard() {
                 src="/Aboutme/Papertape.png"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute -top-4 right-4 rotate-12 w-36 sm:w-40 opacity-90"
+                className="pointer-events-none select-none absolute -top-4 -right-4 rotate-12 w-36 sm:w-40"
               />
               <img
                 src="/Aboutme/Candoerphoto.png"
                 alt="Presenting and facilitating a session"
-                className="w-full h-64 sm:h-72 object-cover rounded-md"
+                className="w-full h-64 sm:h-72 object-cover rounded-md mix-blend-multiply"
                 loading="lazy"
               />
             </div>

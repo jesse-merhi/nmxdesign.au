@@ -97,7 +97,9 @@ function App() {
 
       <main className="w-full flex-grow relative pb-12">
         {transitions((style, outlet) => (
-          <animated.div style={style}>{outlet}</animated.div>
+          <animated.div style={style} className="bg-[#FFF6ED]">
+            {outlet}
+          </animated.div>
         ))}
       </main>
     </div>
