@@ -112,7 +112,7 @@ function Dashboard() {
                 src="/Aboutme/Papertape.png"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute top-0 -left-4 -rotate-12 w-36 sm:w-40"
+                className="pointer-events-none select-none absolute top-0 -left-4 -rotate-12 w-36 sm:w-40 brightness-50"
               />
               <img
                 src="/Aboutme/Creativephoto.png"
@@ -142,7 +142,7 @@ function Dashboard() {
                 src="/Aboutme/Papertape.png"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute -top-4 left-1/2 -translate-x-1/2 rotate-2 w-36 sm:w-40"
+                className="pointer-events-none select-none absolute -top-4 left-1/2 -translate-x-1/2 rotate-2 w-36 sm:w-40 brightness-50"
               />
               <img
                 src="/Aboutme/Experimenterphoto.png"
@@ -172,7 +172,7 @@ function Dashboard() {
                 src="/Aboutme/Papertape.png"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute -top-4 -right-4 rotate-12 w-36 sm:w-40"
+                className="pointer-events-none select-none absolute -top-4 -right-4 rotate-12 w-36 sm:w-40 brightness-50"
               />
               <img
                 src="/Aboutme/Candoerphoto.png"
