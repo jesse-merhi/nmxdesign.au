@@ -116,7 +116,7 @@ function Dashboard() {
               />
               <div className="w-full h-64 sm:h-72 rounded-md overflow-hidden">
                 <img
-                  src="/Aboutme/Creativephoto.png"
+                  src="/Aboutme/Creativephoto.webp"
                   alt="Sketching ideas on a tablet"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -146,9 +146,9 @@ function Dashboard() {
                 aria-hidden="true"
                 className="pointer-events-none select-none absolute -top-4 left-1/2 -translate-x-1/2 rotate-2 w-36 sm:w-40"
               />
-              <div className="w-full h-64 sm:h-72 rounded-md overflow-hidden mt-4">
+              <div className="w-full h-64 sm:h-72 rounded-md overflow-hidden">
                 <img
-                  src="/Aboutme/Experimenterphoto.png"
+                  src="/Aboutme/Experimenterphoto.webp"
                   alt="Planning experiments on paper"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -180,7 +180,7 @@ function Dashboard() {
               />
               <div className="w-full h-64 sm:h-72 rounded-md overflow-hidden">
                 <img
-                  src="/Aboutme/Candoerphoto.png"
+                  src="/Aboutme/Candoerphoto.webp"
                   alt="Presenting and facilitating a session"
                   className="w-full h-full object-cover"
                   loading="lazy"

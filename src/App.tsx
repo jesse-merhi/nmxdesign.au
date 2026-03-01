@@ -97,7 +97,7 @@ function App() {
 
       <main className="w-full flex-grow relative pb-12">
         {transitions((style, outlet) => (
-          <animated.div style={style} className="bg-[#FFF6ED]">
+          <animated.div style={style} className="bg-transparent">
             {outlet}
           </animated.div>
         ))}
