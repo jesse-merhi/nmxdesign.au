@@ -22,6 +22,7 @@ body,
 #root {
   /* Allow natural page scrolling; ensure base sizing */
   min-height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }

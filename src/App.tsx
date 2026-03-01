@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div
-      className="w-screen min-h-screen flex flex-col relative"
+      className="w-full min-h-screen flex flex-col relative"
       style={{
         backgroundColor: '#FFF6ED',
         backgroundImage: 'url(/bg.svg)',
