@@ -1,13 +1,16 @@
 import { animated, useTransition } from '@react-spring/web';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useLocation, useOutlet } from 'react-router-dom';
 import { NavLink } from './components/Navlink.tsx';
 
 function App() {
-  const sections = ['portfolio', 'resume'];
+  const sections = ['case-study', 'resume', 'aboutme'];
   const location = useLocation();
+  const isHomepageRoute = location.pathname === '/';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const currentOutlet = useOutlet();
+  const shellRef = useRef<HTMLDivElement | null>(null);
+  const navRef = useRef<HTMLElement | null>(null);
 
   const transitions = useTransition(currentOutlet, {
     from: { opacity: 0, transform: 'translateY(20px)' },
@@ -38,70 +41,105 @@ function App() {
     }
   }, [isMenuOpen, location]);
 
+  useLayoutEffect(() => {
+    if (!shellRef.current || !navRef.current) return;
+
+    const updateNavHeight = () => {
+      const navHeight = navRef.current?.getBoundingClientRect().height ?? 0;
+      shellRef.current?.style.setProperty('--shell-nav-height', `${Math.round(navHeight)}px`);
+    };
+
+    updateNavHeight();
+
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', updateNavHeight);
+
+      return () => {
+        window.removeEventListener('resize', updateNavHeight);
+      };
+    }
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateNavHeight();
+    });
+
+    resizeObserver.observe(navRef.current);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
   return (
     <div
+      ref={shellRef}
       className="w-screen min-h-screen flex flex-col relative"
       style={{
         backgroundColor: '#FFF6ED',
-        backgroundImage: 'url(/bg.svg)',
-        backgroundRepeat: 'repeat',
-        backgroundSize: '1000px 1000px',
       }}
     >
-      <nav className="w-full flex items-center justify-between p-4 pr-8 bg-[#FFF6ED] backdrop-blur-sm sticky top-0 z-20 font-pfMarlet">
-        <Link to={'/'} className="z-30">
-          <div className="font-pfMarletItalic text-[#AAAADD]">NMX DESIGN</div>
-        </Link>
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="sm:hidden text-2xl z-30">
-          {isMenuOpen ? '✕' : '☰'}
-        </button>
+      <div className="grid-background" aria-hidden="true" />
+      <div className="relative z-10">
+        <nav
+          ref={navRef}
+          className="w-full flex items-center justify-between p-4 pr-8 bg-[#FFF6ED] backdrop-blur-sm sticky top-0 z-20 font-pfMarlet"
+        >
+          <Link to={'/'} className="z-30">
+            <div className="font-pfMarletItalic text-[#AAAADD]">NMX DESIGN</div>
+          </Link>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="sm:hidden text-2xl z-30">
+            {isMenuOpen ? '✕' : '☰'}
+          </button>
 
-        <div className="hidden sm:flex sm:flex-row sm:items-center sm:space-x-6 gap-4">
-          {sections.map((label) => (
-            <NavLink key={label} label={label} isActive={location.pathname.includes(label)} />
-          ))}
-        </div>
-      </nav>
-      {menuTransition(
-        (style, item) =>
-          item && (
+          <div className="hidden sm:flex sm:flex-row sm:items-center sm:space-x-6 gap-4">
+            {sections.map((label) => (
+              <NavLink key={label} label={label} isActive={location.pathname.includes(label)} />
+            ))}
+          </div>
+        </nav>
+        {menuTransition(
+          (style, item) =>
+            item && (
+              <animated.div
+                className="sm:hidden fixed inset-0 z-20 flex flex-col items-center justify-center space-y-4 bg-[#FFF6ED] h-screen"
+                style={style}
+              >
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="absolute top-4 right-4 text-3xl"
+                >
+                  ✕
+                </button>
+                <div
+                  className="flex flex-col items-center space-y-6"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {sections.map((label) => (
+                    <NavLink
+                      key={label}
+                      label={label}
+                      isActive={location.pathname.includes(label)}
+                      className="text-3xl font-pfMarlet"
+                      onClick={() => setIsMenuOpen(false)}
+                      scale={1.7}
+                    />
+                  ))}
+                </div>
+              </animated.div>
+            ),
+        )}
+
+        <main className={`w-full flex-grow relative ${isHomepageRoute ? 'pb-0' : 'pb-12'}`}>
+          {transitions((style, outlet) => (
             <animated.div
-              className="sm:hidden fixed inset-0 z-20 flex flex-col items-center justify-center space-y-4 bg-[#FFF6ED] h-screen"
               style={style}
+              className={isHomepageRoute ? 'bg-transparent' : 'bg-[#FFF6ED]'}
             >
-              <button
-                onClick={() => setIsMenuOpen(false)}
-                className="absolute top-4 right-4 text-3xl"
-              >
-                ✕
-              </button>
-              <div
-                className="flex flex-col items-center space-y-6"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {sections.map((label) => (
-                  <NavLink
-                    key={label}
-                    label={label}
-                    isActive={location.pathname.includes(label)}
-                    className="text-3xl font-pfMarlet"
-                    onClick={() => setIsMenuOpen(false)}
-                    left="5px"
-                    scale={1.7}
-                  />
-                ))}
-              </div>
+              {outlet}
             </animated.div>
-          ),
-      )}
-
-      <main className="w-full flex-grow relative pb-12">
-        {transitions((style, outlet) => (
-          <animated.div style={style} className="bg-[#FFF6ED]">
-            {outlet}
-          </animated.div>
-        ))}
-      </main>
+          ))}
+        </main>
+      </div>
     </div>
   );
 }

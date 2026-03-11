@@ -25,7 +25,7 @@ const AnimatedIndicator = ({ show, scale, left }: AnimatedIndicatorProps) => {
           style={{
             ...style,
             top: '-5px',
-            left: left,
+            left,
             width: 130,
             height: 46,
           }}
@@ -45,16 +45,25 @@ interface NavLinkProps {
   left?: string;
 }
 
-export const NavLink = ({
-  label,
-  isActive,
-  className,
-  onClick,
-  scale = 1,
-  left = '-25px',
-}: NavLinkProps) => {
+export const NavLink = ({ label, isActive, className, onClick, scale = 1, left }: NavLinkProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const showIndicator = isActive || isHovered;
+  const displayLabel =
+    label === 'aboutme'
+      ? 'About me'
+      : label
+          .split('-')
+          .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+          .join(' ');
+  const indicatorLeft =
+    left ??
+    (label === 'case-study'
+      ? '-25px'
+      : label === 'resume'
+        ? '-25px'
+        : label === 'aboutme'
+          ? '-25px'
+          : '-25px');
 
   return (
     <Link
@@ -65,9 +74,9 @@ export const NavLink = ({
       onClick={onClick}
     >
       <button className="bg-transparent relative py-2 px-4">
-        {label}
+        {displayLabel}
 
-        <AnimatedIndicator show={showIndicator} scale={scale} left={left} />
+        <AnimatedIndicator show={showIndicator} scale={scale} left={indicatorLeft} />
       </button>
     </Link>
   );
