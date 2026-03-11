@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.tsx';
 import Homepage from './Homepage.tsx';
 import './index.css';
-import Portfolio from './Case Study.tsx';
+import Portfolio from './Portfolio.tsx';
 import ProjectPage from './ProjectPage.tsx';
 import Resume from './Resume.tsx';
 import UplinkPage from './UplinkPage.tsx';

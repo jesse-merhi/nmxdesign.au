@@ -19,10 +19,10 @@ describe('Homepage', () => {
       screen.getByText(
         /I design products for complicated environments: enterprise platforms, internal tools, and AI-assisted workflows\./,
       ),
-    ).toBeInTheDocument();
-    expect(screen.getByText('Worked at')).toBeInTheDocument();
-    expect(screen.getByAltText('Atlassian logo')).toBeInTheDocument();
-    expect(screen.getByAltText('ReadyTech logo')).toBeInTheDocument();
+    ).toBeTruthy();
+    expect(screen.getByText('Worked at')).toBeTruthy();
+    expect(screen.getByAltText('Atlassian logo')).toBeTruthy();
+    expect(screen.getByAltText('ReadyTech logo')).toBeTruthy();
   });
 
   it('no longer renders the trait cards below the fold', () => {
@@ -32,8 +32,8 @@ describe('Homepage', () => {
       </MemoryRouter>,
     );
 
-    expect(screen.queryByRole('heading', { name: 'Creative' })).not.toBeInTheDocument();
-    expect(screen.queryByRole('heading', { name: 'Experimenter' })).not.toBeInTheDocument();
-    expect(screen.queryByRole('heading', { name: 'Can-doer' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Creative' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Experimenter' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Can-doer' })).toBeNull();
   });
 });
