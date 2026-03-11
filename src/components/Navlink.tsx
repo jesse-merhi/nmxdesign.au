@@ -6,10 +6,9 @@ import DrawingCirclesSVG from './CircleAnimatedSVG';
 interface AnimatedIndicatorProps {
   show: boolean;
   scale: number;
-  left: string;
 }
 
-const AnimatedIndicator = ({ show, scale, left }: AnimatedIndicatorProps) => {
+const AnimatedIndicator = ({ show, scale }: AnimatedIndicatorProps) => {
   const transitions = useTransition(show, {
     from: { opacity: 0, transform: `scale(${scale * 0.95})` },
     enter: { opacity: 1, transform: `scale(${scale})` },
@@ -25,7 +24,8 @@ const AnimatedIndicator = ({ show, scale, left }: AnimatedIndicatorProps) => {
           style={{
             ...style,
             top: '-5px',
-            left,
+            left: '50%',
+            marginLeft: -65,
             width: 130,
             height: 46,
           }}
@@ -76,7 +76,7 @@ export const NavLink = ({ label, isActive, className, onClick, scale = 1, left }
       <button className="bg-transparent relative py-2 px-4">
         {displayLabel}
 
-        <AnimatedIndicator show={showIndicator} scale={scale} left={indicatorLeft} />
+        <AnimatedIndicator show={showIndicator} scale={scale} />
       </button>
     </Link>
   );
