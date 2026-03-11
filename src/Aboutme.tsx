@@ -58,7 +58,7 @@ function Aboutme() {
               />
               <div className="mt-4 h-64 w-full overflow-hidden rounded-md sm:h-72">
                 <img
-                  src="/Homepage/Experimenterphoto.png"
+                  src="/Homepage/Experimenterphoto.jpg"
                   alt="Planning experiments on paper"
                   className="h-full w-full object-cover"
                   loading="lazy"

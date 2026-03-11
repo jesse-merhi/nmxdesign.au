@@ -25,3 +25,6 @@ dist-ssr
 
 
 *.tsbuild.info
+
+# OpenCode
+.sisyphus/
