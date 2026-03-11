@@ -2,27 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.tsx';
-import Dashboard from './dashboard/Dashboard.tsx';
+import Homepage from './Homepage.tsx';
 import './index.css';
-import Portfolio from './Portfolio.tsx';
+import Portfolio from './Case Study.tsx';
 import ProjectPage from './ProjectPage.tsx';
 import Resume from './Resume.tsx';
 import UplinkPage from './UplinkPage.tsx';
 import PerformanceToolPage from './PerformanceToolPage.tsx';
 import JiraPlaybookPage from './JiraPlaybookPage.tsx';
+import Aboutme from './Aboutme.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
-      { path: '', element: <Dashboard /> },
+      { path: '', element: <Homepage /> },
+      { path: 'aboutme', element: <Aboutme /> },
 
-      { path: 'portfolio', element: <Portfolio /> },
-      { path: 'portfolio/uplinked', element: <UplinkPage /> },
-      { path: 'portfolio/aiperftool', element: <PerformanceToolPage /> },
-      { path: 'portfolio/jiraplaybook', element: <JiraPlaybookPage /> },
-      { path: 'portfolio/:projectId', element: <ProjectPage /> },
+      { path: 'case-study', element: <Portfolio /> },
+      { path: 'case-study/uplinked', element: <UplinkPage /> },
+      { path: 'case-study/aiperftool', element: <PerformanceToolPage /> },
+      { path: 'case-study/jiraplaybook', element: <JiraPlaybookPage /> },
+      { path: 'case-study/:projectId', element: <ProjectPage /> },
 
       { path: 'resume', element: <Resume /> },
     ],
