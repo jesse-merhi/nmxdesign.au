@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, Navigate, RouterProvider, useParams } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import App from './App.tsx';
 import Homepage from './Homepage.tsx';
 import './index.css';
@@ -11,11 +11,7 @@ import UplinkPage from './UplinkPage.tsx';
 import PerformanceToolPage from './PerformanceToolPage.tsx';
 import JiraPlaybookPage from './JiraPlaybookPage.tsx';
 import Aboutme from './Aboutme.tsx';
-
-function PortfolioRedirect() {
-  const { projectId } = useParams();
-  return <Navigate to={`/case-study/${projectId ?? ''}`} replace />;
-}
+import PortfolioRedirect from './PortfolioRedirect.tsx';
 
 const router = createBrowserRouter([
   {

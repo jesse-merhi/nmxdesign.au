@@ -42,10 +42,9 @@ interface NavLinkProps {
   className?: string;
   onClick?: () => void;
   scale?: number;
-  left?: string;
 }
 
-export const NavLink = ({ label, isActive, className, onClick, scale = 1, left }: NavLinkProps) => {
+export const NavLink = ({ label, isActive, className, onClick, scale = 1 }: NavLinkProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const showIndicator = isActive || isHovered;
   const displayLabel =
@@ -55,15 +54,6 @@ export const NavLink = ({ label, isActive, className, onClick, scale = 1, left }
           .split('-')
           .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
           .join(' ');
-  const indicatorLeft =
-    left ??
-    (label === 'case-study'
-      ? '-25px'
-      : label === 'resume'
-        ? '-25px'
-        : label === 'aboutme'
-          ? '-25px'
-          : '-25px');
 
   return (
     <Link
