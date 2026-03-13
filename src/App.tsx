@@ -129,7 +129,9 @@ function App() {
             ),
         )}
 
-        <main className={`w-full flex-grow relative ${isHomepageRoute ? 'pb-0' : 'pb-12'}`}>
+        <main
+          className={`relative w-full flex-grow overflow-hidden ${isHomepageRoute ? 'pb-0' : 'pb-12'}`}
+        >
           {transitions((style, outlet) => (
             <animated.div
               style={style}
